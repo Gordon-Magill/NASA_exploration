@@ -1,0 +1,1 @@
+$('.url.example .ui.embed').embed();

@@ -12,27 +12,39 @@
     <link rel="stylesheet" href="./assets/style/resultsPage.css">
 </head>
 <body>
+
+    <!-- Header -->
+    <div class="ui fluid container grid customHeader">
+        <div class="row">
+            <h1>Music Search Helper</h1>
+        </div>
+    </div>
+
+    <!-- Main content -->
     <div class="ui container fluid grid">
         <div class="row">
 
             <!-- Artist image -->
-            <div class="six wide column">
+            <div class="six wide column" id="artistInfoContainer">
                 <img class="ui medium circular image" src="./assets/images/AW_test.jpeg" id="artistPhotoEl">
+                <h1>Artist name</h1>
                 <p>BIO INFO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
             </div>
 
             <!-- Song lyrics -->
             <!-- TODO: Highlight text that was searched for -->
-            <div class="ten wide column">
-                <p>P1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
+            <div class="ten wide column" id="lyricsContainer">
+                <h1>Song title</h1>
+                <p>P1 These are some sick lyrics Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
                 <p>P2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
                 <p>P3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
+                <p>P4 LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS</p>
             </div>
 
         </div>
 
         <!-- Row for music suggestions -->
-        <div class="row">
+        <div class="row" id="musicContainer">
             <div class="two wide column">
                 <img class="ui tiny circular image" src="./assets/images/download.png" id="artistPhotoEl">
                 <p>Song 1</p>
@@ -76,15 +88,17 @@
         </div>
 
         <!-- Wikipedia content -->
+        <iframe src="https://en.wikipedia.org/wiki/Elizabeth_II"></iframe>
 
     </div>
 
     <footer>
+        <br>
         &copy Team 7 2022
     </footer>
 
     <!-- Semantic UI -->
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" title="wikipedia!"></script>
 
     <!-- Custom JS -->
     <script src="./assets/js/resultsPage.js"></script>
