@@ -1,0 +1,16 @@
+body {
+    background-color: gray;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+}
+
+footer {
+    text-align: center;
+}
+
+.customHeader {
+    background-color: black;
+    color:white;
