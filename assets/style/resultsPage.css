@@ -14,20 +14,38 @@ footer {
 .customHeader {
     background-color: black;
     color:white;
+    vertical-align: middle;
+    
 }
 
 #musicContainer {
-    border: 2px solid black;
+    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+    background-color: rgb(144, 143, 143);
     border-radius: 15px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 #artistInfoContainer {
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    background-color: rgb(144, 143, 143);
+    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
     border-radius: 15px;
     padding: 10px;
+    /* margin-right: 10px; */
 }
 
 #lyricsContainer {
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+    background-color: rgb(144, 143, 143);
     border-radius: 15px;
+    /* margin-left: 10px; */
+}
+
+.musicItem {
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
