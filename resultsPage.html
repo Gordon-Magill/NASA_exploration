@@ -17,18 +17,18 @@
 <body>
 
     <!-- Header -->
-    <div class="ui fluid container grid customHeader">
-        <div class="row">
-            <h1>Music Search Helper</h1>
+    <div class="ui grid fluid container customHeader">
+        <div class="ui one column row">
+            <h1 class="ui inverted header">Music Search Helper</h1>
         </div>
     </div>
 
     <!-- Main content -->
-    <div class="ui container fluid relaxed grid">
+    <div class="ui container fluid grid">
         <div class="row">
 
             <!-- Artist image -->
-            <div class="five wide left floated column" id="artistInfoContainer">
+            <div class="ui five wide left floated column" id="artistInfoContainer">
                 <img class="ui medium circular centered image" src="./assets/images/AW_test.jpeg" id="artistPhotoEl">
                 <h1>Artist name (FROM SPOTIFY API)</h1>
                 <p>BIO CONTENT FROM WIKI API <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
@@ -47,66 +47,53 @@
         </div>
 
         <!-- Row for music suggestions -->
-        <div class="ui grid" id="musicContainer">
+        <div class="ui grid fluid container" id="musicContainer">
             <div class="row">
-                <p>More songs from this artist:</p>
+                <p id="moreMusicTitle">More songs from <span id="moreMusicTitleArtist">[ARTIST HERE]</span>:</p>
             </div>
             <div class="row equal width grid">
-                <div class="centered two wide column musicItem">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
                         Song 1
                     </div>
                 </div>
     
-                <div class="centered two wide column">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
-                        Song 1
+                        Song 2
                     </div>
                 </div>
     
-                <div class="two wide column">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
-                        Song 1
+                        Song 3
                     </div>
                 </div>
     
-                <div class="two wide column">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
-                        Song 1
+                        Song 4
                     </div>
                 </div>
     
-                <div class="two wide column">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
-                        Song 1
+                        Song 5
                     </div>
                 </div>
     
-                <div class="two wide column">
+                <div class="column musicItem">
                     <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
                     <div class="ui mini center aligned raised segment">
-                        Song 1
+                        Song 6
                     </div>
                 </div>
-    
-                <div class="two wide column">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 1
-                    </div>
-                </div>
-    
-                <div class="two wide column">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 1
-                    </div>
-                </div>
+  
             </div>
             
 
