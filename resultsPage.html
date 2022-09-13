@@ -88,7 +88,31 @@
         </div>
 
         <!-- Wikipedia content -->
-        <iframe src="https://en.wikipedia.org/wiki/Elizabeth_II"></iframe>
+        <h1 class="header__title">WIKIPEDIA API</h1>
+        <div class="header__search-bar">
+            <input
+                id="input"
+                aria-label="What do you want to know?"
+                type="text"
+                class="search-bar__input"
+                placeholder="What do you want to know?"
+                autofocus
+                required
+            />
+            <button id="submit" type="button" class="search-bar__button" aria-label="search">
+
+            </button>
+        </div>
+    </header>
+</div>
+
+<div class="results">
+    <p id="error" class="results__error"></p>
+    <div id="results" class="results__items"></div>
+</div>
+</body>
+
+
 
     </div>
 
@@ -101,6 +125,8 @@
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" title="wikipedia!"></script>
 
     <!-- Custom JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assests/js/wikiscript.js"></script>
     <script src="./assets/js/resultsPage.js"></script>
 </body>
 </html>
