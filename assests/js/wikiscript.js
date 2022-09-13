@@ -1,5 +1,4 @@
-//This code was built with the help of a youtube video. it will be modified to fit out project at a later date
-//https://www.youtube.com/watch?v=yqwHxAH1xrw
+
 
 const submitButton = document.querySelector('#submit');
 const input = document.querySelector('#input');
