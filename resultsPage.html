@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyric search</title>
+    <title>NASA Imagery Research</title>
     <link rel="icon" href="./assets/images/download.png">
 
     <!-- Semantic UI -->
@@ -17,37 +17,46 @@
 <body>
 
     <!-- Header -->
-    <div class="ui grid fluid container customHeader">
+    <div class="ui fluid container grid customHeader">
         <div class="ui one column row">
-            <h1 class="ui inverted header">Music Search Helper</h1>
+            <h1 class="ui inverted header">NASA Imagery Research</h1>
         </div>
     </div>
 
     <!-- Main content -->
-    <div class="ui container fluid grid">
+    <div class="ui fluid container grid">
         <div class="row">
 
             <!-- Artist image -->
-            <div class="ui five wide left floated column" id="artistInfoContainer">
-                <img class="ui medium circular centered image" src="./assets/images/AW_test.jpeg" id="artistPhotoEl">
-                <h1>Artist name (FROM SPOTIFY API)</h1>
-                <p>BIO CONTENT FROM WIKI API <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
+            <div class="ui six wide left floated column">
+
+                <div class="ui row infoContainer">
+                    <p>Name: Blahblahblah</p>
+                    <p>Target: Blahblahblah</p>
+                    <p>Source: Blahblahblah</p>
+                    <p>Photographer: Blahblahblah</p>
+                    <p>Metadata1: Blahblahblah</p>
+                    <p>Metadata2: Blahblahblah</p>
+
+                </div>
+
+                <div class="ui row infoContainer">
+                    <iframe src="https://en.wikipedia.org/wiki/NASA"></iframe>
+                </div>
+
             </div>
 
             <!-- Song lyrics -->
             <!-- TODO: Highlight text that was searched for -->
-            <div class="ten wide right floated column" id="lyricsContainer">
-                <h1>Song title</h1>
-                <p>P1 LYRICS FROM SPOTIFY API <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
-                <p>P2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
-                <p>P3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente qui distinctio quis error maxime? Dolor, perferendis tempora eius doloremque neque odit ipsam tempore nihil sunt ut consequatur quod molestias deleniti?</p>
-                <p>P4 LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS LYRICS</p>
+            <div class="nine wide right floated column" id="lyricsContainer">
+                NASA IMAGES HERE
+                <img class="ui huge centered image" src="./assets/images/SnakingFilament_Friedman_960.jpg" id="artistPhotoEl">
             </div>
 
         </div>
 
         <!-- Row for music suggestions -->
-        <div class="ui grid fluid container" id="musicContainer">
+        <!-- <div class="ui grid fluid container" id="musicContainer">
             <div class="row">
                 <p id="moreMusicTitle">More songs from <span id="moreMusicTitleArtist">[ARTIST HERE]</span>:</p>
             </div>
@@ -97,10 +106,10 @@
             </div>
             
 
-        </div>
+        </div> -->
 
         <!-- Wikipedia content -->
-        <iframe src="https://en.wikipedia.org/wiki/Elizabeth_II"></iframe>
+        
 
     </div>
 
