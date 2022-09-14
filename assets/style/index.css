@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
 }
 
 iframe {
@@ -14,4 +14,8 @@ footer {
 .customHeader {
     background-color: black;
     color:white;
+}
+
+#searchBar {
+    color: #9A2A2A;
 }
