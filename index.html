@@ -19,42 +19,44 @@
     
      <!-- Header -->
     <div class="ui fluid container grid customHeader">
-        <div class="row">
+        <div class="ui one column row">
             <h1>NASA Imagery Research</h1>
         </div>
     </div>
 
     <!-- Main content -->
-    <div class="ui container fluid grid">
-        <div class="column">
+    <div class="ui fluid container grid">
+        <div class="row">
 
-        <!--Search Bar -->
-        <div class="ui centered category search">
+        <!-- Search Bar and Wiki API on left -->
+        <div class="ui seven wide left floated column">
+
+            <!--Search Bar -->
             <div class="ui massive icon input" id="searchBar">
               <input class="prompt" type="text" placeholder="Search NASA imagery...">
               <i class="search icon"></i>
             </div>
-        <div class="results"></div>
 
-     <!-- Wikipedia content -->
+            <div class="results"></div>
+    
+        <!-- Wikipedia content -->
        
-     <h1 class="header__title">WIKIPEDIA API</h1>
-     <div class="header__search-bar">
-         <input
-             id="input"
-             aria-label="What do you want to know?"
-             type="text"
-             class="search-bar__input"
-             placeholder="What do you want to know?"
-             autofocus
-             required
-         />
-         <button id="submit" type="button" class="search-bar__button" aria-label="search">
-             
-         </button>
-     </div>
- </header>
-</div>
+        <h1 class="header__title">WIKIPEDIA API</h1>
+            <div class="header__search-bar">
+                <input
+                 id="input"
+                aria-label="What do you want to know?"
+                type="text"
+                class="search-bar__input"
+                placeholder="What do you want to know?"
+                autofocus
+                required
+                />
+                <button id="submit" type="button" class="search-bar__button" aria-label="search">
+                 </button>
+            </div>
+        </div>        
+
 
 <div class="results">
  <p id="error" class="results__error"></p>
@@ -62,6 +64,34 @@
 </div>
 </body>
 
+ <!-- Gallery of API images -->
+<div class="nine wide right aligned column" id="imageContainer">
+ 
+ <!--links for the images from API-->   
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+
+    <a href="https://google.com" class="ui medium image">
+        <img src="./assets/images/nasa_logo_icon_170926.png">
+    </a>
+</div>    
 
 
 <Footer>
