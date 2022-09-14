@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA Imagery Research</title>
-    <link rel="icon" href="./assets/images/download.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/nasa_logo_icon_170926.png">
 
     <!-- Semantic UI -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
@@ -27,11 +29,18 @@
     <div class="ui fluid container grid">
         <div class="row">
 
-            <!-- Artist image -->
-            <div class="ui six wide left floated column">
+            <!-- Image information on left -->
+            <div class="ui seven wide left floated column">
 
+                <!-- Search bar -->
+                <div class="ui massive centered icon fluid input" id="searchBar">
+                    <input class="prompt" type="text" placeholder="Search NASA imagery...">
+                    <i class="search icon"></i>
+                </div>
+
+                <!-- Metadata of the image -->
                 <div class="ui row infoContainer">
-                    <p>Name: Blahblahblah</p>
+                    <h2>Name: Blahblahblah</h2>
                     <p>Target: Blahblahblah</p>
                     <p>Source: Blahblahblah</p>
                     <p>Photographer: Blahblahblah</p>
@@ -41,16 +50,14 @@
                 </div>
 
                 <div class="ui row infoContainer">
-                    <iframe src="https://en.wikipedia.org/wiki/NASA"></iframe>
+                    <iframe src="https://en.m.wikipedia.org/wiki/NASA"></iframe>
                 </div>
 
             </div>
 
-            <!-- Song lyrics -->
-            <!-- TODO: Highlight text that was searched for -->
-            <div class="nine wide right floated column" id="lyricsContainer">
-                NASA IMAGES HERE
-                <img class="ui huge centered image" src="./assets/images/SnakingFilament_Friedman_960.jpg" id="artistPhotoEl">
+            <!-- Main image display -->
+            <div class="nine wide right floated column" id="imageContainer">
+                <img class="ui huge centered image" src="./assets/images/SnakingFilament_Friedman_960.jpg" id="nasaPhotoEl">
             </div>
 
         </div>
