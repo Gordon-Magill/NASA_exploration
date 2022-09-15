@@ -107,8 +107,23 @@
                 </div>
 
                 <div class="ui row infoContainer">
+
+                  <div class="header__search-bar">
+                      <input
+                       id="input"
+                      type="text"
+                      class="search-bar__input"
+                      placeholder="What do you want to know?"
+                      autofocus
+                      required
+                      />
+                      <button id="submit" type="button" class="search-bar__button" aria-label="search">
+                       </button>
+                  </div>
+
                     <a href="" id="wikiLikEl">Wikipedia link for <span id="wikiLinkQueryEl">BLAH</span></a>
                     <p id="wikiContentEl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi natus sint recusandae commodi laboriosam pariatur obcaecati consequuntur, provident in assumenda aut fuga. Iusto, quibusdam velit maiores tempore eligendi dolorem!</p>
+
                 </div>
 
             </div>
@@ -134,7 +149,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="./assests/js/wikiscript.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/wikiscript.js"></script>
     <script src="./assets/js/resultsPage.js"></script>
 </body>
 </html>

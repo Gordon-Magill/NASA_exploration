@@ -11,11 +11,11 @@ const params = {
     format: 'json',
     action: 'query',
     prop: 'extracts',
-    exchars: 250,
+    exchars: 3000,
     exintro: true,
     explaintext: true,
     generator: 'search',
-    gsrlimit: 20,
+    gsrlimit: 1,
 };
 
 const disableUi = () => {
