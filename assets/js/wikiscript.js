@@ -11,7 +11,7 @@ const params = {
     format: 'json',
     action: 'query',
     prop: 'extracts',
-    exchars: 3000,
+    exchars: 5000,
     exintro: true,
     explaintext: true,
     generator: 'search',
