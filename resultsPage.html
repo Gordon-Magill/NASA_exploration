@@ -50,7 +50,28 @@
                 </div>
 
                 <div class="ui row infoContainer">
-                    <iframe src="https://en.m.wikipedia.org/wiki/NASA"></iframe>
+                    <h1 class="header__title">WIKIPEDIA API</h1>
+            <div class="header__search-bar">
+                <input
+                 id="input"
+                type="text"
+                class="search-bar__input"
+                placeholder="What do you want to know?"
+                autofocus
+                required
+                />
+                <button id="submit" type="button" class="search-bar__button" aria-label="search">
+                 </button>
+                 <div class="results">
+                    <p id="error" class="results__error"></p>
+                    <div id="results" class="results__items"></div>
+                   </div>
+            </div>
+        </div>        
+
+
+
+</body>
                 </div>
 
             </div>
@@ -130,7 +151,7 @@
 
     <!-- Custom JS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./assests/js/wikiscript.js"></script>
+    <script src="./assets/js/wikiscript.js"></script>
     <script src="./assets/js/resultsPage.js"></script>
 </body>
 </html>
