@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(151, 38, 38);
 }
 
 iframe {
@@ -12,7 +12,7 @@ footer {
 }
 
 .customHeader {
-    background-color: black;
+    background-color: rgb(190, 65, 65);
     color:white;
 }
 
