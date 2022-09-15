@@ -1,3 +1,9 @@
+
+$('.ui.labeled.icon.sidebar')
+  .sidebar('toggle')
+  .transition('slide left')
+;
+
 function getApi() {
 
 var requestURL = ("https://api.nasa.gov/planetary/apod?api_key=QMAeSLw9LphOgRCAK702ASasb6X8HaxCufGsvHaw")

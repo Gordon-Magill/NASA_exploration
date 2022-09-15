@@ -18,6 +18,62 @@
 
 <body>
 
+    <!-- Side bar for advanced search -->
+    <div class="ui left demo vertical inverted sidebar labeled icon visible menu">
+        <a class="item" href="https://gordon-magill.github.io/NASA_exploration/"> 
+          <i class="home icon"></i>
+          Home
+        </a>
+        <a class="item">
+          <i class="block layout icon"></i>
+          Advanced search
+        </a>
+
+        <!-- Center -->
+        <div class="ui small centered icon fluid input" id="searchBarCenter">
+            <input class="prompt" type="text" placeholder="Nasa center">
+        </div>
+
+        <!-- Description -->
+        <div class="ui small centered icon fluid input" id="searchBarDescription">
+            <input class="prompt" type="text" placeholder="Description">
+        </div>
+
+        <!-- Keywords -->
+        <div class="ui small centered icon fluid input" id="searchBarKeywords">
+            <input class="prompt" type="text" placeholder="Keywords">
+        </div>
+
+        <!-- Location -->
+        <div class="ui small centered icon fluid input" id="searchBarLocation">
+            <input class="prompt" type="text" placeholder="Location">
+        </div>
+
+        <!-- Photographer -->
+        <div class="ui small centered icon fluid input" id="searchBarPhotographer">
+            <input class="prompt" type="text" placeholder="Photographer">
+        </div>
+
+        <!-- Title -->
+        <div class="ui small centered icon fluid input" id="searchBarTitle">
+            <input class="prompt" type="text" placeholder="Title">
+        </div>
+
+        <!-- Start Year -->
+        <div class="ui small centered icon fluid input" id="searchBarStartYear">
+            <input class="prompt" type="text" placeholder="Start Year">
+        </div>
+
+        <!-- End Year -->
+        <div class="ui small centered icon fluid input" id="searchBarEndYear">
+            <input class="prompt" type="text" placeholder="End Year">
+        </div>
+
+        <input type="submit">
+
+      </div>
+      
+
     <!-- Header -->
     <div class="ui fluid container grid customHeader">
         <div class="ui one column row">
@@ -40,17 +96,19 @@
 
                 <!-- Metadata of the image -->
                 <div class="ui row infoContainer">
-                    <h2 id="Name">Name: Blahblahblah</h2>
-                    <p id="">Target: Blahblahblah</p>
-                    <p id="Source">Source: Blahblahblah</p>
-                    <p id="Photographer">Photographer: Blahblahblah</p>
-                    <p id="Metadata">Metadata1: Blahblahblah</p>
-                    <p id="Metadata2">Metadata2: Blahblahblah</p>
-
+                    <h2>Name: <span id="nasaTitleEl">Blah</span></h2>
+                    <p>Description: 
+                        <span id="nasaDescriptionEl">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit praesentium culpa debitis reprehenderit necessitatibus laboriosam cumque odio ut mollitia nostrum possimus, voluptatum, accusamus quae minima cum tempora? Provident, cupiditate aspernatur!
+                        </span>
+                    </p>
+                    <p>Date: <span id="nasaDateCreatedEl">Blah</span></p>
+                    <p>NASA Center: <span id="nasaCenterEl">Blah</span></p>
                 </div>
 
                 <div class="ui row infoContainer">
-                    <iframe src="https://en.m.wikipedia.org/wiki/NASA"></iframe>
+                    <a href="" id="wikiLikEl">Wikipedia link for <span id="wikiLinkQueryEl">BLAH</span></a>
+                    <p id="wikiContentEl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, excepturi natus sint recusandae commodi laboriosam pariatur obcaecati consequuntur, provident in assumenda aut fuga. Iusto, quibusdam velit maiores tempore eligendi dolorem!</p>
                 </div>
 
             </div>
@@ -62,62 +120,6 @@
 
         </div>
 
-        <!-- Row for music suggestions -->
-        <!-- <div class="ui grid fluid container" id="musicContainer">
-            <div class="row">
-                <p id="moreMusicTitle">More songs from <span id="moreMusicTitleArtist">[ARTIST HERE]</span>:</p>
-            </div>
-            <div class="row equal width grid">
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 1
-                    </div>
-                </div>
-    
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 2
-                    </div>
-                </div>
-    
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 3
-                    </div>
-                </div>
-    
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 4
-                    </div>
-                </div>
-    
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 5
-                    </div>
-                </div>
-    
-                <div class="column musicItem">
-                    <img class="ui tiny circular centered image" src="./assets/images/download.png" id="artistPhotoEl">
-                    <div class="ui mini center aligned raised segment">
-                        Song 6
-                    </div>
-                </div>
-  
-            </div>
-            
-
-        </div> -->
-
-        <!-- Wikipedia content -->
-        
-
     </div>
 
     <footer>
@@ -126,10 +128,12 @@
     </footer>
 
     <!-- Semantic UI -->
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" title="wikipedia!"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assests/js/wikiscript.js"></script>
     <script src="./assets/js/resultsPage.js"></script>
 </body>
