@@ -59,6 +59,7 @@ footer {
   margin-bottom: 15px;
   /* margin-right: 10px; */
   margin-top: 10px;
+  font-size: 14px;
 }
 
 #imageContainer {
@@ -68,17 +69,12 @@ footer {
   border-radius: 15px;
   padding: 10px;
   /* margin-left: 10px; */
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
-.musicItem {
-  box-shadow: 0px 0px 10px black;
-  border-radius: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: rgb(171, 171, 171);
-  margin: 5px;
-}
+/* .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column {
+  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+} */
 
 #searchBar {
   margin-bottom: 15px;
