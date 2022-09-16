@@ -18,23 +18,27 @@
 
 <body>
 
-    <div class="ui top attached demo menu">
-        <a class="item">
-          <i class="sidebar icon"></i> Menu
+    <!-- Segment for the top menu bar that reveals the search bar -->
+    <div class="ui top attached demo menu" id="topMenuBar">
+
+        <a class="ui item">
+            <i class="sidebar icon"></i> Search menu
         </a>
+        <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
+
     </div>
 
-    <div class="ui bottom attached segment">
+    <div class="ui bottom attached segment mainBody">
 
         <!-- Side bar for advanced search -->
-        <div class="ui left demo vertical inverted sidebar labeled icon visible menu">
+        <div class="ui left demo vertical inverted sidebar labeled icon hidden menu">
             <a class="item" href="https://gordon-magill.github.io/NASA_exploration/"> 
             <i class="home icon"></i>
             Home
             </a>
             <a class="item">
             <i class="block layout icon"></i>
-            Advanced search
+            Search criteria
             </a>
 
             <!-- Description -->
@@ -68,13 +72,6 @@
     
         <!-- Pusher class to help sidebar render correctly -->
         <div class="ui fluid container grid">
-
-            <!-- Header -->
-            <div class="ui fluid row customHeader">
-                <div class="ui one column row">
-                    <h1 class="ui inverted header">NASA Imagery Research</h1>
-                </div>
-            </div>
 
             <!-- Image information on left -->
             <div class="ui seven wide left floated column">
