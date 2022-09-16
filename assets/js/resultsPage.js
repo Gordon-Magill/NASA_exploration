@@ -3,6 +3,12 @@
 //   var searchButton = "document.blahblach";
 // searchbutton.AddEventListener("click", getApi);
 
+// https://codepen.io/redshift7/pen/VaKmjq
+$('.ui.sidebar').sidebar({
+  context: $('.bottom.segment')
+})
+.sidebar('attach events', '.menu .item');
+
 // Setting up elements to drop in information from search result
 var nasaTitleEl = $('#nasaTitleEl');
 var nasaDescriptionEl = $('#nasaDescriptionEl');
