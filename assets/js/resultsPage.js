@@ -1,31 +1,60 @@
+// $(".ui.labeled.icon.sidebar").sidebar("toggle").transition("slide left");
+// var apiKey = QMAeSLw9LphOgRCAK702ASasb6X8HaxCufGsvHaw
+//   var searchButton = "document.blahblach";
+// searchbutton.AddEventListener("click", getApi);
 
-$('.ui.labeled.icon.sidebar')
-  .sidebar('toggle')
-  .transition('slide left')
-;
+// Setting up elements to drop in information from search result
+var nasaTitleEl = $('#nasaTitleEl');
+var nasaDescriptionEl = $('#nasaDescriptionEl');
+var nasaDateCreatedEl = $('#nasaDateCreatedEl');
+var nasaCenterEl = $('#nasaCenterEl');
+var nasaPhotoEl = $('#nasaPhotoEl');
 
-function getApi() {
+// Enables sidebar hiding
+// $('.customHeader').on('click',toggleSidebar)
+// function toggleSidebar(){
+//     $(".ui.labeled.icon.sidebar").sidebar("toggle");
+// }
 
-var requestURL = ("https://api.nasa.gov/planetary/apod?api_key=QMAeSLw9LphOgRCAK702ASasb6X8HaxCufGsvHaw")
-var searchbutton = ("document.blahblach")
-fetch (requestURL)
-.then(function(result) {return result.json();})
-// Loopy Thing  
-.then (function (data) {console.log(data)
-for (var i=0; i < data.length; i++) {
-    var bacsRow = document.getElementbyid('Name')
-    var Data = document.getElementbyid ('Metadata1')
-    var Data = document.getElementById('Metadata2')
-    var data = document.getElementbyid('source')
-    var tableData = document.getElementbyid ('Metadata1')
-    var tableData = document.getElementById('Metadata2')
-}   
-{ //Chang the links??
-    link.textContent = data[i].html_url;
-    link.href = datat[i].html_url;
+function executeSearch() {
+  var requestURL = "https://images-api.nasa.gov/search?q=mars";
 
-     //Append stuff
-}});
+  fetch(requestURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data.collection.items[0].data[0]);
+      var primaryResult = data.collection.items[0].data[0];
+      var imgCreatedDate = data.collection.items[0].data[0].date_created;
+      console.log(imgCreatedDate);
+      var imgDescription = primaryResult.description;
+      console.log(imgDescription);
+      var imgTitle = primaryResult.title;
+      console.log(imgTitle)
+      var nasa_id = primaryResult.nasa_id;
+      console.log(nasa_id)
+
+    //   Setting the page elements to the retrieved data
+      nasaTitleEl.text(imgTitle)
+      nasaDescriptionEl.text(imgDescription)
+      nasaDateCreatedEl.text(imgCreatedDate)
+    //   nasa
+      getImage(nasa_id)
+    });
 }
 
-searchbutton.AddEventListener('click', getApi)
+function getImage(nasa_id) {
+    fetch(`https://images-api.nasa.gov/asset/${nasa_id}`)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data)
+        var imgLink = data.collection.items[2].href; //Index 1 gets the "medium" image
+        console.log(imgLink)
+        nasaPhotoEl.attr('src',imgLink)
+    })
+}
+
+executeSearch();
