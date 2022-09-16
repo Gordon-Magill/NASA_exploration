@@ -1,72 +1,98 @@
-body.pushable > .pusher {
-    background-color: rgb(111, 111, 111);
-
+.ui.segment {
+  background-color: rgb(111, 111, 111);
 }
 
-body {
+.ui.top.attached {
+  background-color: black;
+}
+
+.ui.top.attached > a {
+  background-color: white;
+}
+.ui.top.attached > a:hover {
+  background-color: white;
+}
+
+#topMenuBar {
+  display: flex;
+  /* align-content: center; */
+}
+
+#newHeader {
+  align-self: center;
+  margin: 0 0 0 10px;
+  color: white;
+  background-color: black;
+}
+
+/* .mainBody {
     background-color: rgb(111, 111, 111);
+} */
+
+body {
+  background-color: rgb(111, 111, 111);
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 }
 
 .customHeader {
-    background-color: black;
+  background-color: black;
 }
 
 #musicContainer {
-    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-    background-color: rgb(144, 143, 143);
-    border-radius: 15px;
-    margin-top: 10px;
-    width: 100%;
+  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+  background-color: rgb(144, 143, 143);
+  border-radius: 15px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .infoContainer {
-    /* border: 2px solid black; */
-    background-color: rgb(144, 143, 143);
-    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-    border-radius: 15px;
-    padding: 10px;
-    margin-bottom: 15px;
-    /* margin-right: 10px; */
+  /* border: 2px solid black; */
+  background-color: rgb(144, 143, 143);
+  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  /* margin-right: 10px; */
+  margin-top: 10px;
 }
 
 #imageContainer {
-    /* border: 2px solid black; */
-    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-    background-color: rgb(144, 143, 143);
-    border-radius: 15px;
-    padding: 10px;
-    /* margin-left: 10px; */
+  /* border: 2px solid black; */
+  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+  background-color: rgb(144, 143, 143);
+  border-radius: 15px;
+  padding: 10px;
+  /* margin-left: 10px; */
+  margin-top: 25px;
 }
 
 .musicItem {
-    box-shadow: 0px 0px 10px black;
-    border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: rgb(171, 171, 171);
-    margin: 5px;
-
+  box-shadow: 0px 0px 10px black;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgb(171, 171, 171);
+  margin: 5px;
 }
 
 #searchBar {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .results__item__intro {
-    color: black;
+  color: black;
 }
 
-.search-bar__button  {
-    
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
+.search-bar__button {
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
