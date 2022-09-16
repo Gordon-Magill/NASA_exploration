@@ -1,130 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NASA Imagery Research</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./assets/images/nasa_logo_icon_170926.png">
+    <link rel="icon" href="./assets/images/nasa_logo_icon_170926.png" />
 
     <!-- Semantic UI -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/style/resultsPage.css">
-</head>
+    <link rel="stylesheet" href="./assets/style/resultsPage.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Segment for the top menu bar that reveals the search bar -->
-    <div class="ui top attached demo menu" id="topMenuBar">
+    <div class="ui top attached menu" id="topMenuBar">
+      <a class="ui item"> <i class="sidebar icon"></i> Search menu </a>
+      <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
+    </div>
 
-        <a class="ui item">
-            <i class="sidebar icon"></i> Search menu
+    <div class="ui bottom attached segment">
+      <!-- Side bar for advanced search -->
+      <div
+        class="ui left demo vertical inverted sidebar labeled icon hidden menu"
+      >
+        <a
+          class="item"
+          href="https://gordon-magill.github.io/NASA_exploration/"
+        >
+          <i class="home icon"></i>
+          Home
         </a>
-        <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
+        <a class="item">
+          <i class="block layout icon"></i>
+          Search criteria
+        </a>
 
-    </div>
-
-    <div class="ui bottom attached segment mainBody">
-
-        <!-- Side bar for advanced search -->
-        <div class="ui left demo vertical inverted sidebar labeled icon hidden menu">
-            <a class="item" href="https://gordon-magill.github.io/NASA_exploration/"> 
-            <i class="home icon"></i>
-            Home
-            </a>
-            <a class="item">
-            <i class="block layout icon"></i>
-            Search criteria
-            </a>
-
-            <!-- Description -->
-            <div class="ui small centered icon fluid input" id="searchBarDescription">
-                <input class="prompt" type="text" placeholder="Description">
-            </div>
-
-            <!-- Keywords -->
-            <div class="ui small centered icon fluid input" id="searchBarKeywords">
-                <input class="prompt" type="text" placeholder="Keywords">
-            </div>
-
-            <!-- Title -->
-            <div class="ui small centered icon fluid input" id="searchBarTitle">
-                <input class="prompt" type="text" placeholder="Title">
-            </div>
-
-            <!-- Start Year -->
-            <div class="ui small centered icon fluid input" id="searchBarStartYear">
-                <input class="prompt" type="text" placeholder="Start Year">
-            </div>
-
-            <!-- End Year -->
-            <div class="ui small centered icon fluid input" id="searchBarEndYear">
-                <input class="prompt" type="text" placeholder="End Year">
-            </div>
-
-            <input type="submit">
-
-        </div>
-    
-        <!-- Pusher class to help sidebar render correctly -->
-        <div class="ui fluid container grid">
-
-            <!-- Image information on left -->
-            <div class="ui seven wide left floated column">
-
-                <!-- Metadata of the image -->
-                <div class="ui row infoContainer">
-                    <h2 id="nasaTitleEl"></h2>
-                    <p id="nasaDescriptionEl">Description: 
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit praesentium culpa debitis reprehenderit necessitatibus laboriosam cumque odio ut mollitia nostrum possimus, voluptatum, accusamus quae minima cum tempora? Provident, cupiditate aspernatur!
-                    </p>
-                    <p>Date: <span id="nasaDateCreatedEl">Blah</span></p>
-                </div>
-
-                <div class="ui row infoContainer">
-
-                <div class="header__search-bar">
-                    <input
-                    id="input"
-                    type="text"
-                    class="search-bar__input"
-                    placeholder="What do you want to know?"
-                    autofocus
-                    required
-                    />
-                    <button id="submit" type="button" class="search-bar__button" aria-label="search">
-                    </button>
-                    <div class="results">
-                        <p id="error" class="results__error"></p>
-                        <div id="results" class="results__items"></div>
-                    </div>
-                </div>
-
-                    <a href="" id="wikiLikEl">Reset your Wikipedia search <span id="wikiLinkQueryEl">HERE</span></a>
-                    <p id="wikiContentEl">Your search results will populate in this container. Go ahead and type your astronomical question above!</p>
-
-                </div>
-
-            </div>
-
-            <!-- Main image display -->
-            <div class="nine wide right floated column" id="imageContainer">
-                <img class="ui huge centered image" src="./assets/images/SnakingFilament_Friedman_960.jpg" id="nasaPhotoEl">
-            </div>
-
-            <footer>
-                <br>
-                &copy Team 7 2022
-            </footer>
-
+        <!-- Description -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Description"
+            id="searchBarDescription"
+          />
         </div>
 
+        <!-- Keywords -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Keywords"
+            id="searchBarKeywords"
+          />
+        </div>
+
+        <!-- Title -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Title"
+            id="searchBarTitle"
+          />
+        </div>
+
+        <!-- Start Year -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Start Year"
+            id="searchBarStartYear"
+          />
+        </div>
+
+        <!-- End Year -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="End Year"
+            id="searchBarEndYear"
+          />
+        </div>
+
+        <input type="submit" id='customSearchButton'/>
+      </div>
+
+      <!-- Pusher class to help sidebar render correctly -->
+      <div class="ui pusher fluid container grid">
+        <!-- Image information on left -->
+        <div class="ui seven wide left floated column">
+          <!-- Metadata of the image -->
+          <div class="ui row infoContainer">
+            <h2 id="nasaTitleEl"></h2>
+            <p id="nasaDescriptionEl">
+              Description: Lorem, ipsum dolor sit amet consectetur adipisicing
+              elit. Odit praesentium culpa debitis reprehenderit necessitatibus
+              laboriosam cumque odio ut mollitia nostrum possimus, voluptatum,
+              accusamus quae minima cum tempora? Provident, cupiditate
+              aspernatur!
+            </p>
+            <p>Date: <span id="nasaDateCreatedEl">Blah</span></p>
+          </div>
+
+          <div class="ui row infoContainer">
+            <div class="header__search-bar">
+              <input
+                id="input"
+                type="text"
+                class="search-bar__input"
+                placeholder="What do you want to know?"
+                autofocus
+                required
+              />
+              <button
+                id="submit"
+                type="button"
+                class="search-bar__button"
+                aria-label="search"
+              ></button>
+              <div class="results">
+                <p id="error" class="results__error"></p>
+                <div id="results" class="results__items"></div>
+              </div>
+            </div>
+
+            <a href="" id="wikiLikEl"
+              >Reset your Wikipedia search
+              <span id="wikiLinkQueryEl">HERE</span></a
+            >
+            <p id="wikiContentEl">
+              Your search results will populate in this container. Go ahead and
+              type your astronomical question above!
+            </p>
+          </div>
+        </div>
+
+        <!-- Main image display -->
+        <div class="nine wide right floated column" id="imageContainer">
+          <img
+            class="ui huge centered image"
+            src="./assets/images/SnakingFilament_Friedman_960.jpg"
+            id="nasaPhotoEl"
+          />
+        </div>
+
+        <footer>
+          <br />
+          &copy Team 7 2022
+        </footer>
+      </div>
     </div>
-    
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -136,5 +172,5 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/js/wikiscript.js"></script>
     <script src="./assets/js/resultsPage.js"></script>
-</body>
+  </body>
 </html>
