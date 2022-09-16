@@ -27,7 +27,7 @@ function executeSearch() {
   var endYearField = $("#searchBarEndYear");
 
   // Template URL with required query
-  var requestURL = `https://images-api.nasa.gov/search?q=${descriptionField.val()}`;
+  var requestURL = `https://images-api.nasa.gov/search?q=${descriptionField.val()}&media_type=image`;
 
   // Conditional statements that add in new query terms if they were added
   if (keywordsField.val()) {

@@ -26,8 +26,10 @@
       <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
     </div>
 
-    <div class="ui bottom attached segment">
-      <!-- Side bar for advanced search -->
+    <!-- All main body content -->
+    <div class="ui bottom attached segment pusher pushable">
+
+      <!-- Sidebar for search criteria -->
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
       >
@@ -55,7 +57,7 @@
           />
         </div>
 
-        <br>
+        <br />
         <p style="color: white">Optional</p>
 
         <!-- Keywords -->
@@ -67,9 +69,7 @@
             id="searchBarKeywords"
           />
         </div>
-        <br>
-
-
+        <br />
 
         <!-- Title -->
         <div class="ui small centered icon fluid input">
@@ -81,7 +81,7 @@
           />
         </div>
 
-        <br>
+        <br />
 
         <!-- Start Year -->
         <div class="ui small centered icon fluid input">
@@ -93,7 +93,7 @@
           />
         </div>
 
-        <br>
+        <br />
 
         <!-- End Year -->
         <div class="ui small centered icon fluid input">
@@ -105,77 +105,86 @@
           />
         </div>
 
-        <input type="submit" id='customSearchButton'/>
+        <input type="submit" id="customSearchButton" />
+      </div>
+
+      <!-- Main page content requested by user -->
+      <!-- Pusher wrapper needed for proper transition animations of sidebar -->
+      <div class="pusher">
+
+        <!-- Grid container for main content -->
+        <div class="ui fluid container grid stackable">
+
+          <!-- Main image container -->
+          <div class="ui nine wide right floated column" id="imageContainer">
+            <img
+              class="ui huge centered image"
+              src="http://images-assets.nasa.gov/image/PIA16573/PIA16573~small.jpg"
+              id="nasaPhotoEl"
+            />
+          </div>
+          
+          <!-- Image information containers -->
+          <div class="ui seven wide left floated column">
+            <!-- Metadata of the image -->
+            <div class="ui row infoContainer">
+              <h2 id="nasaTitleEl">Heating Martian Sand Grains</h2>
+              <p id="nasaDescriptionEl">
+                This plot of data from NASA Mars rover Curiosity shows the
+                variety of gases that were released from sand grains upon
+                heating in the Sample Analysis at Mars instrument, or SAM.
+              </p>
+              <p>
+                Date: <span id="nasaDateCreatedEl">2012-12-03T17:00:06Z</span>
+              </p>
+            </div>
+
+            <div class="ui row infoContainer">
+              <div class="ui mini icon input header__search-bar">
+                <input
+                  id="input"
+                  type="text"
+                  class="search-bar__input"
+                  placeholder="Wiki search"
+                  autofocus=""
+                  required=""
+                />
+                <button
+                  id="submit"
+                  type="button"
+                  class="search-bar__button"
+                  aria-label="search"
+                ></button>
+                <div class="results">
+                  <p id="error" class="results__error"></p>
+                  <div id="results" class="results__items"></div>
+                </div>
+              </div>
+
+              <a href="" id="wikiLikEl"
+                >Reset your Wikipedia search
+                <span id="wikiLinkQueryEl">HERE</span></a
+              >
+              <p id="wikiContentEl">
+                Your search results will populate in this container. Go ahead
+                and type your astronomical question above!
+              </p>
+            </div>
+          </div>
+
+          <footer>
+            <br />
+            © Team 7 2022
+          </footer>
+        </div>
       </div>
 
       <!-- Pusher class to help sidebar render correctly -->
-      <div class="ui pusher fluid container grid">
-        <!-- Image information on left -->
-        <div class="ui seven wide left floated column">
-          <!-- Metadata of the image -->
-          <div class="ui row infoContainer">
-            <h2 id="nasaTitleEl"></h2>
-            <p id="nasaDescriptionEl">
-              Description: Lorem, ipsum dolor sit amet consectetur adipisicing
-              elit. Odit praesentium culpa debitis reprehenderit necessitatibus
-              laboriosam cumque odio ut mollitia nostrum possimus, voluptatum,
-              accusamus quae minima cum tempora? Provident, cupiditate
-              aspernatur!
-            </p>
-            <p>Date: <span id="nasaDateCreatedEl">Blah</span></p>
-          </div>
-
-          <div class="ui row infoContainer">
-            <div class="header__search-bar">
-              <input
-                id="input"
-                type="text"
-                class="search-bar__input"
-                placeholder="What do you want to know?"
-                autofocus
-                required
-              />
-              <button
-                id="submit"
-                type="button"
-                class="search-bar__button"
-                aria-label="search"
-              ></button>
-              <div class="results">
-                <p id="error" class="results__error"></p>
-                <div id="results" class="results__items"></div>
-              </div>
-            </div>
-
-            <a href="" id="wikiLikEl"
-              >Reset your Wikipedia search
-              <span id="wikiLinkQueryEl">HERE</span></a
-            >
-            <p id="wikiContentEl">
-              Your search results will populate in this container. Go ahead and
-              type your astronomical question above!
-            </p>
-          </div>
-        </div>
-
-        <!-- Main image display -->
-        <div class="nine wide right floated column" id="imageContainer">
-          <img
-            class="ui huge centered image"
-            src="./assets/images/SnakingFilament_Friedman_960.jpg"
-            id="nasaPhotoEl"
-          />
-        </div>
-
-        <footer>
-          <br />
-          &copy Team 7 2022
-        </footer>
-      </div>
     </div>
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div style="position: static !important"></div>
 
     <!-- Semantic UI -->
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
