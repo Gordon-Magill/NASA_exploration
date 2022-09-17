@@ -60,6 +60,12 @@ function URL2result() {
   
   fetch(apiURL)
   .then(function (response) {
+    console.log(response)
+
+    // In case of bad response, send user to bad search page
+    if (response.status >= 400) {
+      document.location.replace('https://gordon-magill.github.io/NASA_exploration/ErrorResultPage.html')
+    }
     return response.json();
   })
   .then(function (data) {
@@ -141,6 +147,7 @@ function URL2result() {
 function getImage(nasa_id) {
   fetch(`https://images-api.nasa.gov/asset/${nasa_id}`)
     .then(function (response) {
+      console.log(response)
       return response.json();
     })
     .then(function (data) {
@@ -148,6 +155,8 @@ function getImage(nasa_id) {
       var imgLink = data.collection.items[2].href; //Index 1 gets the "medium" image
       console.log(imgLink);
       nasaPhotoEl.attr("src", imgLink);
+
+      // Since request was successful, add the result to the search history
     });
 }
 
