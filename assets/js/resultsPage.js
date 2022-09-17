@@ -172,6 +172,16 @@ function addToSearchHistory() {
   console.log(searchHistory)
 
   // Store the query parameters that led to the successful page render
+  var currentQuery = document.location.search;
+
+  // Don't add to search history if the query is already present
+  for (i=0;i<searchHistory.length;i++) {
+    if (searchHistory[i]===currentQuery) {
+      console.log(currentQuery+' was already in search history, not appending new element')
+      return;
+    }
+  }
+
   searchHistory.push(document.location.search)
 
   localStorage.setItem('searchHistory',JSON.stringify(searchHistory))
@@ -179,8 +189,15 @@ function addToSearchHistory() {
   return;
 }
 
+// Takes the search history and uses it to render new elements on the search history
 function renderSearchHistory() {
   var sideBarParent = $('#sideBarParent')
+  var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+  // for (i=0;i<searchHistory.length; i++) {
+  //   var newHistoryEl = $('<div>')
+  // }
+
   return;
 }
 
