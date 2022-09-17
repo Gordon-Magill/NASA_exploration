@@ -194,14 +194,42 @@ function renderSearchHistory() {
   var sideBarParent = $('#sideBarParent')
   var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
-  // for (i=0;i<searchHistory.length; i++) {
-  //   var newHistoryEl = $('<div>')
-  // }
+  // Abort if there is no search history to render
+  if (searchHistory.length<1) {
+    return;
+  }
+
+  // Cycle through search history elements and create cards for each
+  for (i=0;i<searchHistory.length; i++) {
+
+    // Creating elements of the card
+    var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html?${searchHistory[i]}`
+    var newHistoryCard = $(`<a class="ui raised card" href="${searchHistoryLink}">`)
+    var cardContent = $('<div class="content">')
+    var cardTitle = $('<div class="header">')
+    cardTitle.text('Placeholder title here')
+    var cardDescription = $('<div class="description">')
+    var cardDescriptionText = $('<p>')
+    cardDescriptionText.text('Description here')
+
+    // Assembling card components into the final card
+    cardDescription.append(cardDescriptionText)
+    cardContent.append(cardTitle)
+    cardContent.append(cardDescription)
+    newHistoryCard.append(cardContent)
+
+    // Actually appending the new card
+    sideBarParent.append(newHistoryCard)
+
+
+
+  }
 
   return;
 }
 
 function clearSearchHistory() {
+  localStorage.setItem('searchHistory',JSON.stringify([]))
   return;
 }
 
