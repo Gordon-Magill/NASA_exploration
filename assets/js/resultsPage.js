@@ -82,7 +82,7 @@ function URL2result() {
 
     //   Setting the page elements to the retrieved data
     nasaTitleEl.text(imgTitle);
-    nasaDescriptionEl.text(imgDescription);
+    nasaDescriptionEl.html(imgDescription);
     nasaDateCreatedEl.text(imgCreatedDate);
     //   nasa
     getImage(nasa_id);
@@ -157,8 +157,13 @@ function getImage(nasa_id) {
     })
     .then(function (data) {
       console.log(data);
-      var imgLink = data.collection.items[2].href; //Index 1 gets the "medium" image
-      console.log(imgLink);
+      var imgLink = data.collection.items[0].href; //Index 1 gets the "medium" image
+
+      // TODO: Add fix for case where returned file is actually more metadata
+
+      console.log('Image link: '+imgLink)
+      console.log('Parsed image link:')
+      // console.log(JSON.parse(imgLink))
       nasaPhotoEl.attr("src", imgLink);
 
       // Since request was successful, add the result to the search history
