@@ -204,8 +204,21 @@ function renderSearchHistory() {
     return;
   }
 
+  // Function for grabbing query parameters from a saved query string
+  // Based off code from https://fellowtuts.com/jquery/get-query-string-values-url-parameters-javascript/
+  function getQueryObject(queryString){
+    // var url = document.location.href;
+    var qs = queryString.substring(queryString.indexOf('?') + 1).split('&');
+    for(var i = 0, result = {}; i < qs.length; i++){
+        qs[i] = qs[i].split('=');
+        result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+    }
+    return result;
+  }
+
   // Cycle through search history elements and create cards for each
   for (i=0;i<searchHistory.length; i++) {
+    console.log(getQueryObject(searchHistory[i]))
 
     // Creating elements of the card
     var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html?${searchHistory[i]}`
@@ -242,3 +255,4 @@ function clearSearchHistory() {
 URL2result();
 //...and if page wasn't redirected, then show the search history in on the left
 renderSearchHistory();
+
