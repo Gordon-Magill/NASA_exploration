@@ -147,7 +147,12 @@ function URL2result() {
 function getImage(nasa_id) {
   fetch(`https://images-api.nasa.gov/asset/${nasa_id}`)
     .then(function (response) {
-      console.log(response)
+
+      //Redirect upon bad response
+      if (response.status >= 400) {
+        document.location.replace('https://gordon-magill.github.io/NASA_exploration/ErrorResultPage.html')
+      }
+
       return response.json();
     })
     .then(function (data) {
@@ -157,7 +162,33 @@ function getImage(nasa_id) {
       nasaPhotoEl.attr("src", imgLink);
 
       // Since request was successful, add the result to the search history
+      addToSearchHistory()
     });
 }
 
+function addToSearchHistory() {
+  // Grab existing search history (or empty array as backup)
+  var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+  console.log(searchHistory)
+
+  // Store the query parameters that led to the successful page render
+  searchHistory.push(document.location.search)
+
+  localStorage.setItem('searchHistory',JSON.stringify(searchHistory))
+
+  return;
+}
+
+function renderSearchHistory() {
+  var sideBarParent = $('#sideBarParent')
+  return;
+}
+
+function clearSearchHistory() {
+  return;
+}
+
+// Upon page load, grab the search result...
 URL2result();
+//...and if page wasn't redirected, then show the search history in on the left
+renderSearchHistory();

@@ -22,7 +22,7 @@
   <body>
     <!-- Segment for the top menu bar that reveals the search bar -->
     <div class="ui top attached menu" id="topMenuBar">
-      <a class="ui item"> <i class="sidebar icon"></i> Search menu </a>
+      <a class="ui item"> <i class="sidebar icon"></i> Search / History </a>
       <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
     </div>
 
@@ -32,7 +32,7 @@
       <!-- Sidebar for search criteria -->
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
-        id="searchBarParent"
+        id="sideBarParent"
       >
         <a
           class="item"
@@ -116,10 +116,11 @@
       <div class="pusher">
 
         <!-- Grid container for main content -->
-        <div class="ui fluid container grid stackable">
+        <div class="ui container grid stackable">
 
           <!-- Main image container -->
-          <div class="ui nine wide right floated column" id="imageContainer">
+          <div class="ui nine wide column" id="imageContainer">
+            <!-- Placeholder image in src -->
             <img
               class="ui huge centered image"
               src="http://images-assets.nasa.gov/image/PIA16573/PIA16573~small.jpg"
@@ -128,7 +129,7 @@
           </div>
           
           <!-- Image information containers -->
-          <div class="ui seven wide left floated column">
+          <div class="ui seven wide column">
             <!-- Metadata of the image -->
             <div class="ui row infoContainer">
               <h2 id="nasaTitleEl">Heating Martian Sand Grains</h2>
@@ -182,7 +183,7 @@
         </div>
       </div>
 
-      <!-- Pusher class to help sidebar render correctly -->
+    <!-- Pusher class to help sidebar render correctly -->
     </div>
 
     <!-- jQuery -->
