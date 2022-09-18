@@ -69,7 +69,7 @@ footer {
   border-radius: 15px;
   padding: 10px;
   /* margin-left: 10px; */
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 /* .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column {
@@ -92,4 +92,8 @@ footer {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+#searchBarParent {
+  color: white;
 }
