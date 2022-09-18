@@ -141,12 +141,12 @@
 
       <!-- Main page content requested by user -->
       <!-- Pusher wrapper needed for proper transition animations of sidebar -->
-      <div class="fluid pusher">
+      <div class="pusher">
         <!-- Grid container for main content -->
         <div class="ui fluid container">
           <div class="ui centered grid stackable">
             <!-- Main image container -->
-            <div class="ui nine wide column" id="imageContainer">
+            <div class="ui eight wide column" id="imageContainer">
               <!-- Placeholder image in src -->
               <img class="ui huge centered image" src="#" id="nasaPhotoEl" />
             </div>
@@ -174,39 +174,39 @@
                       autofocus=""
                       required=""
                     />
+
                     <button
                       id="submit"
                       type="button"
-                      class="search-bar__button"
+                      class="ui button search-bar__button"
                       aria-label="search"
-                      style="color: black;"
-                    >Search Wikipedia</button>
-                    
+                      style="color: black; margin-left: 10px"
+                    >
+                      Search
+                    </button>
                   </div>
+
                   <div class="results">
                     <p id="error" class="results__error"></p>
                     <div id="results" class="results__items"></div>
                   </div>
-
                 </div>
-                
 
-                <a href="" id="wikiLikEl"
+                <!-- <a href="" id="wikiLikEl"
                   >Reset your Wikipedia search
                   <span id="wikiLinkQueryEl">HERE</span></a
                 >
                 <p id="wikiContentEl">
                   Your search results will populate in this container. Go ahead
                   and type your astronomical question above!
-                </p>
+                </p> -->
               </div>
             </div>
-
-            <footer>
-              <br />
-              © Team 7 2022
-            </footer>
           </div>
+          <footer>
+            <br />
+            © Team 7 2022
+          </footer>
         </div>
       </div>
     </div>
