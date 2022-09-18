@@ -36,6 +36,7 @@ function clearSearchHistory() {
 }
 
 function renderSearchHistory() {
+  console.log('renderSearchHistory() activated')
   var sideBarParent = $("#sideBarParent");
   var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
