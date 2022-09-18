@@ -136,3 +136,5 @@ function search2resultURL() {
     // Forward the user on to the constructed result page URL
     document.location.replace(searchResultURL);
   }
+
+  refreshSearchHistory()
