@@ -2,7 +2,13 @@
 margin-left: 79px;
 padding-left: 49px;
 }
+
 body{
     background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-29-a-xlarge_web.jpg);
-    opacity: 75%;
+    opacity: 90%;
+}
+
+.customCard {
+    opacity: 100%;
+    margin: 20px;
 }
