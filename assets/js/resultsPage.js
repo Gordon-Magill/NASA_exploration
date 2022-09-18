@@ -1,26 +1,3 @@
-// Search button in the left sidebar
-var searchButton = $("#customSearchButton");
-searchButton.on("click", search2resultURL);
-
-// Clear search history button in left sidebar
-var clearButton = $("#clearHistoryButton");
-clearButton.on("click", clearSearchHistory);
-
-// Enables sidebar hiding and revealing
-// Based on https://codepen.io/redshift7/pen/VaKmjq
-$(".ui.sidebar")
-  .sidebar({
-    context: $(".bottom.segment"),
-  })
-  .sidebar("attach events", ".menu .item");
-
-// Setting up elements to drop in information from search result
-var nasaTitleEl = $("#nasaTitleEl");
-var nasaDescriptionEl = $("#nasaDescriptionEl");
-var nasaDateCreatedEl = $("#nasaDateCreatedEl");
-var nasaCenterEl = $("#nasaCenterEl");
-var nasaPhotoEl = $("#nasaPhotoEl");
-
 // Uses the URL of the results page to query the NASA API and retrieve content
 function URL2result() {
   // Grab the query string and generate the API link
