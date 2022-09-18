@@ -92,3 +92,7 @@ footer {
   display: inline-block;
   font-size: 16px;
 }
+
+#spacerBar {
+  margin-bottom: 100px;
+}
