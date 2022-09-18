@@ -33,54 +33,6 @@ body {
   background-color: rgb(111, 111, 111);
 }
 
-footer {
-  text-align: center;
-}
-
-.customHeader {
-  background-color: black;
-}
-
-
-.infoContainer {
-  /* border: 2px solid black; */
-  background-color: rgb(144, 143, 143);
-  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-  border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 15px;
-  /* margin-right: 10px; */
-  margin-top: 10px;
-}
-
-#GalleryContainer {
-  /* border: 2px solid black; */
-  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-  background-color: rgb(144, 143, 143);
-  border-radius: 15px;
-  padding: 10px;
-  /* margin-left: 10px; */
-  margin-top: 25px;
-}
-
-#searchBar {
-  margin-bottom: 15px;
-}
-
-.results__item__intro {
-  color: black;
-}
-
-.search-bar__button {
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
 .footer {
   background-color: black;
   color : white;
@@ -88,5 +40,13 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 15px 0;
+  padding: 15px 0; 
+  text-align: center;
+  font-family: 'Ms Madi', cursive;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+.fluid.image {
+  margin-top: 12%;
 }
