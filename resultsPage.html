@@ -22,17 +22,15 @@
   <body>
     <!-- Segment for the top menu bar that reveals the search bar -->
     <div class="ui top attached menu" id="topMenuBar">
-      <a class="ui item"> <i class="sidebar icon"></i> Search menu </a>
+      <a class="ui item"> <i class="sidebar icon"></i> Search / History </a>
       <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
     </div>
 
     <!-- All main body content -->
-    <div class="ui bottom attached segment pusher pushable">
-
+    <div class="ui bottom attached segment">
       <!-- Sidebar for search criteria -->
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
-        id="searchBarParent"
       >
         <a
           class="item"
@@ -46,7 +44,7 @@
           Search criteria
         </a>
 
-        <p style="color: white">REQUIRED:</p>
+        <p style="color: red; font-size: 20px;">REQUIRED:</p>
 
         <!-- Description -->
         <div class="ui small centered icon fluid input">
@@ -59,7 +57,7 @@
         </div>
 
         <br />
-        <p style="color: white">OPTIONAL:</p>
+        <p style="color: white; font-size: 20px;">OPTIONAL:</p>
 
         <!-- Keywords -->
         <div class="ui small centered icon fluid input">
@@ -106,79 +104,87 @@
           />
         </div>
 
-        <input type="submit" id="customSearchButton" />
-        <hr>
-        <p>Search history:</p>
+        <button class="ui inverted primary button" id="customSearchButton">
+          Search using criteria above
+        </button>
+        <!-- <label for="customSearchButton">Search</label> -->
+        <hr />
+        <p style="color: white">Search history:</p>
+        <button class="ui inverted red button" id="clearHistoryButton">
+          Clear search history
+        </button>
+        <div id="sideBarParent"></div>
       </div>
 
       <!-- Main page content requested by user -->
       <!-- Pusher wrapper needed for proper transition animations of sidebar -->
-      <div class="pusher">
-
+      <div class="fluid pusher">
         <!-- Grid container for main content -->
-        <div class="ui fluid container grid stackable">
-
-          <!-- Main image container -->
-          <div class="ui nine wide right floated column" id="imageContainer">
-            <img
-              class="ui huge centered image"
-              src="http://images-assets.nasa.gov/image/PIA16573/PIA16573~small.jpg"
-              id="nasaPhotoEl"
-            />
-          </div>
-          
-          <!-- Image information containers -->
-          <div class="ui seven wide left floated column">
-            <!-- Metadata of the image -->
-            <div class="ui row infoContainer">
-              <h2 id="nasaTitleEl">Heating Martian Sand Grains</h2>
-              <p id="nasaDescriptionEl">
-                This plot of data from NASA Mars rover Curiosity shows the
-                variety of gases that were released from sand grains upon
-                heating in the Sample Analysis at Mars instrument, or SAM.
-              </p>
-              <p>
-                Date: <span id="nasaDateCreatedEl">2012-12-03T17:00:06Z</span>
-              </p>
+        <div class="ui fluid container">
+          <div class="ui centered grid stackable">
+            <!-- Main image container -->
+            <div class="ui nine wide column" id="imageContainer">
+              <!-- Placeholder image in src -->
+              <img
+                class="ui huge centered image"
+                src="#"
+                id="nasaPhotoEl"
+              />
             </div>
 
-            <div class="ui row infoContainer">
-              <div class="ui mini icon input header__search-bar">
-                <input
-                  id="input"
-                  type="text"
-                  class="search-bar__input"
-                  placeholder="Wiki search"
-                  autofocus=""
-                  required=""
-                />
-                <button
-                  id="submit"
-                  type="button"
-                  class="search-bar__button"
-                  aria-label="search"
-                ></button>
-                <div class="results">
-                  <p id="error" class="results__error"></p>
-                  <div id="results" class="results__items"></div>
-                </div>
+            <!-- Image information containers -->
+            <div class="ui six wide column">
+              <!-- Metadata of the image -->
+              <div class="ui row infoContainer">
+                <h2 id="nasaTitleEl">Heating Martian Sand Grains</h2>
+                <p id="nasaDescriptionEl">
+                  This plot of data from NASA Mars rover Curiosity shows the
+                  variety of gases that were released from sand grains upon
+                  heating in the Sample Analysis at Mars instrument, or SAM.
+                </p>
+                <p>
+                  Date: <span id="nasaDateCreatedEl">2012-12-03T17:00:06Z</span>
+                </p>
               </div>
 
-              <a href="" id="wikiLikEl"
-                >Reset your Wikipedia search
-                <span id="wikiLinkQueryEl">HERE</span></a
-              >
-              <p id="wikiContentEl">
-                Your search results will populate in this container. Go ahead
-                and type your astronomical question above!
-              </p>
-            </div>
-          </div>
+              <div class="ui row infoContainer">
+                <div class="ui mini icon input header__search-bar">
+                  <input
+                    id="input"
+                    type="text"
+                    class="search-bar__input"
+                    placeholder="Wiki search"
+                    autofocus=""
+                    required=""
+                  />
+                  <button
+                    id="submit"
+                    type="button"
+                    class="search-bar__button"
+                    aria-label="search"
+                  ></button>
+                  <div class="results">
+                    <p id="error" class="results__error"></p>
+                    <div id="results" class="results__items"></div>
+                  </div>
+                </div>
 
-          <footer>
-            <br />
-            © Team 7 2022
-          </footer>
+                <a href="" id="wikiLikEl"
+                  >Reset your Wikipedia search
+                  <span id="wikiLinkQueryEl">HERE</span></a
+                >
+                <p id="wikiContentEl">
+                  Your search results will populate in this container. Go ahead
+                  and type your astronomical question above!
+                </p>
+              </div>
+            </div>
+
+            <footer>
+              <br />
+              © Team 7 2022
+            </footer>
+          </div>
         </div>
       </div>
 
