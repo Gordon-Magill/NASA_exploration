@@ -1,0 +1,55 @@
+/* Styles the main body of the page */
+.ui.segment {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(35, 35, 35),
+    rgb(179, 179, 179)
+  );
+}
+
+/* Styles the top bar of the page, effectively the header / nav area */
+.ui.top.attached {
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 76, 255),
+    rgb(0, 255, 115)
+  );
+}
+
+/* Ensures proper coloring of menu button */
+.ui.top.attached > a {
+  background-color: white;
+}
+
+/* Ensures proper coloring of menu button */
+.ui.top.attached > a:hover {
+  background-color: white;
+}
+
+/* Styles title/header element at top of page */
+#newHeader {
+  align-self: center;
+  margin: 0 0 0 10px;
+  color: white;
+  text-shadow: 0px 0px 3px black;
+}
+
+/* Centers bottom footer text */
+footer {
+  text-align: center;
+}
+
+/* Adds proper spacing */
+#searchBar {
+  margin-bottom: 15px;
+}
+
+/* Gives better spacing on sidebar */
+#customSearchButton,
+#clearHistoryButton {
+  margin: 10px;
+}
+
+#spacerBar {
+  margin-bottom: 100px;
+}
