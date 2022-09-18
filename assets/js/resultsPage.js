@@ -121,6 +121,12 @@ function getImage(nasa_id) {
 
       // Indexing of the image link gives different sizes -> 0 is always available, but is the largest size (original)
       var imgLink = data.collection.items[0].href;
+      console.log(imgLink.slice(imgLink.length-3))
+
+      // Check if image is a tiff and go to the next largest image an alternative
+      if (imgLink.slice(imgLink.length-3) == 'tif') {
+        var imgLink = data.collection.items[1].href;
+      }
 
       console.log("Image link: " + imgLink);
       nasaPhotoEl.attr("src", imgLink);
