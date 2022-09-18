@@ -5,27 +5,160 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error Nasa Imagery</title>
-    <link rel="stylesheet" href="./assets/style/Error.css"> 
+    
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
-    <script src= "./assets/js/errorpage.js" defer> </script>
-   
+       <!-- Favicon -->
+       <link rel="icon" href="./assets/images/nasa_logo_icon_170926.png" />
+
+       <!-- Semantic UI -->
+       <link
+         rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">ma
+        <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style/allPages.css">
+        <link rel="stylesheet" href="./assets/style/Error.css"> 
 </head>
 <body>
-    <div class="pagewrap">
-
-    <div class="badsearch">
-    <h1>Your Search led to a black hole</h1>
+   <div class="ui top attached menu" id="topMenuBar">
+      <a class="ui item"> <i class="sidebar icon"></i> Search / History </a>
+      <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
     </div>
 
-    <div class="refine">
-        <h2>Please Refine Your Serach... </h2>
-    </div>
+    <!-- All main body content -->
+    <div class="ui bottom attached segment">
+      <!-- Sidebar for search criteria -->
+      <div
+        class="ui left demo vertical inverted sidebar labeled icon hidden menu"
+      >
+        <!-- Link back to homepage -->
+        <a
+          class="item"
+          href="https://gordon-magill.github.io/NASA_exploration/"
+        >
+          <i class="home icon"></i>
+          Home
+        </a>
 
-    <div class="useAdvancesearch">
-        <h2>Use The advance Search...</h2>
-    </div>
+        <!-- Search icon -->
+        <div class="item">
+          <i class="search plus icon"></i>
+          Search criteria
+        </div>
+
+        <p style="color: red; font-size: 20px">REQUIRED:</p>
+
+        <!-- Description field for search-->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Description"
+            id="searchBarDescription"
+          />
+        </div>
+
+        <br />
+        <p style="color: white; font-size: 20px">OPTIONAL:</p>
+
+        <!-- Keywords for search-->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Keywords"
+            id="searchBarKeywords"
+          />
+        </div>
+        <br />
+
+        <!-- Title of image for search -->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Title"
+            id="searchBarTitle"
+          />
+        </div>
+
+        <br />
+
+        <!-- Start Year for search-->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="Start Year"
+            id="searchBarStartYear"
+          />
+        </div>
+
+        <br />
+
+        <!-- End Year for search-->
+        <div class="ui small centered icon fluid input">
+          <input
+            class="prompt"
+            type="text"
+            placeholder="End Year"
+            id="searchBarEndYear"
+          />
+        </div>
+
+        <!-- Submission button -->
+        <button
+          class="ui inverted primary button customButton"
+          id="customSearchButton"
+        >
+          Search using criteria above
+        </button>
+
+        <hr />
+
+        <p style="color: white; font-size: 20px">Search history:</p>
+        <button
+          class="ui inverted red button customButton"
+          id="clearHistoryButton"
+        >
+          Clear search history
+        </button>
+
+        <!-- Parent element for remaining content in search history, populated in JS -->
+        <div id="sideBarParent"></div>
+      </div>
+
+      <!-- Main page content requested by user -->
+      <!-- Pusher wrapper needed for proper transition animations of sidebar -->
+      <div class="fluid pusher">
+
+        <div class="pagewrap">
+
+            <div class="badsearch">
+            <h1>Your Search led to a black hole</h1>
+            </div>
+        
+            <div class="refine">
+                <h2>Please Refine Your Serach... </h2>
+            </div>
+        
+            <div class="useAdvancesearch">
+                <h2>Use The advance Search...</h2>
+            </div>
+      </div>
+        <!-- Grid container for main content -->
+      
+        
+  
+
+    
+    <script src="./assets/js/allPages.js"></script>
+    
+
+    <!-- Semantic UI -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    
     
 </div>  
 

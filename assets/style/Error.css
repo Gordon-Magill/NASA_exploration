@@ -20,3 +20,102 @@ body{
     background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-29-a-xlarge_web.jpg);
     opacity: 95%;
 }
+/* Styles the main body of the page */
+.ui.segment {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(35, 35, 35),
+      rgb(179, 179, 179)
+    );
+  }
+  
+  /* Styles the top bar of the page, effectively the header / nav area */
+  .ui.top.attached {
+    background-image: linear-gradient(
+      to right,
+      rgb(0, 76, 255),
+      rgb(0, 255, 115)
+    );
+  }
+  
+  /* Ensures proper coloring of menu button */
+  .ui.top.attached > a {
+    background-color: white;
+  }
+  
+  /* Ensures proper coloring of menu button */
+  .ui.top.attached > a:hover {
+    background-color: white;
+  }
+  
+  /* Styles title/header element at top of page */
+  #newHeader {
+    align-self: center;
+    margin: 0 0 0 10px;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+  }
+  
+  /* Centers bottom footer text */
+  footer {
+    text-align: center;
+  }
+  
+  /* Styles rounded bubbles that house the text content on the page */
+  .infoContainer {
+    /* border: 2px solid black; */
+    background-image: linear-gradient(
+      to bottom,
+      rgb(72, 72, 72),
+      rgb(179, 179, 179)
+    );
+    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    margin: 10px;
+    font-size: 14px;
+  }
+  
+  /* Styles the container for the main image on the page */
+  #imageContainer {
+    box-shadow: 0px 0px 10px black, 0px 0px 10px black;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(35, 35, 35),
+      rgb(179, 179, 179)
+    );
+    border-radius: 15px;
+    padding: 10px;
+    margin: 25px;
+  }
+  
+  /* Adds proper spacing */
+  #searchBar {
+    margin-bottom: 15px;
+  }
+  
+  /* Gives better spacing on sidebar */
+  #customSearchButton,
+  #clearHistoryButton {
+    margin: 10px;
+  }
+  
+  .results__item__intro {
+    color: black;
+  }
+  
+  .search-bar__button {
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  #spacerBar {
+    margin-bottom: 100px;
+  }
+  

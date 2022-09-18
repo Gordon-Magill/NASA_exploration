@@ -1,0 +1,27 @@
+.pagewrap {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ms Madi', cursive;
+    padding-right: 1em;
+    position: relative;
+    
+
+}
+.card {
+    background-color: black;
+    padding:8rem;
+    border: 1px solid #777;
+    border-radius: .25rem;
+    color: beige;
+   margin-top: 100px; 
+   object-position: center;
+}
+
+p{
+    font-size: 35px;
+}
+body{
+    max-width: 3000px;
+    background-image:url(https://www.boredpanda.com/blog/wp-content/uploads/2018/12/bad-parking-5c1256caaad91__700.jpg);
+    margin-bottom: 1000px;
+}
