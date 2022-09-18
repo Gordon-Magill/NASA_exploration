@@ -31,7 +31,6 @@
       <!-- Sidebar for search criteria -->
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
-        id="sideBarParent"
       >
         <a
           class="item"
@@ -45,7 +44,7 @@
           Search criteria
         </a>
 
-        <p style="color: white">REQUIRED:</p>
+        <p style="color: red; font-size: 20px;">REQUIRED:</p>
 
         <!-- Description -->
         <div class="ui small centered icon fluid input">
@@ -58,7 +57,7 @@
         </div>
 
         <br />
-        <p style="color: white">OPTIONAL:</p>
+        <p style="color: white; font-size: 20px;">OPTIONAL:</p>
 
         <!-- Keywords -->
         <div class="ui small centered icon fluid input">
@@ -105,10 +104,16 @@
           />
         </div>
 
-        <input type="submit" id="customSearchButton" />
+        <button class="ui inverted primary button" id="customSearchButton">
+          Search using criteria above
+        </button>
         <!-- <label for="customSearchButton">Search</label> -->
         <hr />
         <p style="color: white">Search history:</p>
+        <button class="ui inverted red button" id="clearHistoryButton">
+          Clear search history
+        </button>
+        <div id="sideBarParent"></div>
       </div>
 
       <!-- Main page content requested by user -->

@@ -3,6 +3,9 @@
 var searchButton = $('#customSearchButton');
 searchButton.on("click", search2resultURL);
 
+var clearButton = $('#clearHistoryButton');
+clearButton.on('click',clearSearchHistory)
+
 // Enables sidebar hiding and revealing
 // https://codepen.io/redshift7/pen/VaKmjq
 $(".ui.sidebar")
@@ -69,16 +72,16 @@ function URL2result() {
     return response.json();
   })
   .then(function (data) {
-    console.log(data.collection.items[0].data[0]);
+    // console.log(data.collection.items[0].data[0]);
     var primaryResult = data.collection.items[0].data[0];
     var imgCreatedDate = data.collection.items[0].data[0].date_created;
-    console.log(imgCreatedDate);
+    // console.log(imgCreatedDate);
     var imgDescription = primaryResult.description;
-    console.log(imgDescription);
+    // console.log(imgDescription);
     var imgTitle = primaryResult.title;
-    console.log(imgTitle);
+    // console.log(imgTitle);
     var nasa_id = primaryResult.nasa_id;
-    console.log(nasa_id);
+    // console.log(nasa_id);
 
     //   Setting the page elements to the retrieved data
     nasaTitleEl.text(imgTitle);
@@ -162,7 +165,7 @@ function getImage(nasa_id) {
       // TODO: Add fix for case where returned file is actually more metadata
 
       console.log('Image link: '+imgLink)
-      console.log('Parsed image link:')
+      // console.log('Parsed image link:')
       // console.log(JSON.parse(imgLink))
       nasaPhotoEl.attr("src", imgLink);
 
@@ -191,7 +194,7 @@ function addToSearchHistory() {
 
   localStorage.setItem('searchHistory',JSON.stringify(searchHistory))
 
-  return;
+  refreshSearchHistory()
 }
 
 // Takes the search history and uses it to render new elements on the search history
@@ -207,7 +210,6 @@ function renderSearchHistory() {
   // Function for grabbing query parameters from a saved query string
   // Based off code from https://fellowtuts.com/jquery/get-query-string-values-url-parameters-javascript/
   function getQueryObject(queryString){
-    // var url = document.location.href;
     var qs = queryString.substring(queryString.indexOf('?') + 1).split('&');
     for(var i = 0, result = {}; i < qs.length; i++){
         qs[i] = qs[i].split('=');
@@ -217,23 +219,44 @@ function renderSearchHistory() {
   }
 
   // Cycle through search history elements and create cards for each
-  for (i=0;i<searchHistory.length; i++) {
-    console.log(getQueryObject(searchHistory[i]))
+  for (k=0;k<searchHistory.length; k++) {
+
+    // Fetch query parameters from the query string
+    var queryParams = getQueryObject(searchHistory[k])
+    // console.log(Object.keys(queryParams)[0])
+    var nProps = Object.keys(queryParams).length;
+    console.log(`nProps: ${nProps}`)
 
     // Creating elements of the card
-    var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html?${searchHistory[i]}`
+    var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html${searchHistory[k]}`
     var newHistoryCard = $(`<a class="ui raised card" href="${searchHistoryLink}">`)
     var cardContent = $('<div class="content">')
     var cardTitle = $('<div class="header">')
-    cardTitle.text('Placeholder title here')
+    cardTitle.text(queryParams['q'])
     var cardDescription = $('<div class="description">')
     var cardDescriptionText = $('<p>')
-    cardDescriptionText.text('Description here')
+    
 
     // Assembling card components into the final card
-    cardDescription.append(cardDescriptionText)
+    
     cardContent.append(cardTitle)
-    cardContent.append(cardDescription)
+
+    // Add description if optional query parameters were used
+    if (nProps>1) {
+      console.log('Rendering greater description')
+      for (j=1;j<nProps;j++) {
+        if (Object.keys(queryParams)[j] !== 'media_type') {
+          var paramPTag = $('<p>')
+          paramPTag.text(`${Object.keys(queryParams)[j]}: ${queryParams[Object.keys(queryParams)[j]]}`)
+          cardDescription.append(paramPTag)
+
+        }
+       console.log(j) 
+      }
+      // cardDescriptionText.text(descriptionText)
+      cardDescription.append(cardDescriptionText)
+      cardContent.append(cardDescription)
+    }
     newHistoryCard.append(cardContent)
 
     // Actually appending the new card
@@ -246,9 +269,16 @@ function renderSearchHistory() {
   return;
 }
 
+function refreshSearchHistory() {
+  var sideBarParent = $('#sideBarParent')
+  sideBarParent.empty();
+  renderSearchHistory()
+}
+
 function clearSearchHistory() {
   localStorage.setItem('searchHistory',JSON.stringify([]))
-  return;
+  var sideBarParent = $('#sideBarParent')
+  sideBarParent.empty();
 }
 
 // Upon page load, grab the search result...
