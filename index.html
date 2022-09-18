@@ -22,17 +22,17 @@
   <body>
     <!-- Segment for the top menu bar that reveals the search bar -->
     <div class="ui top attached menu" id="topMenuBar">
-      <a class="ui item"> <i class="sidebar icon"></i> Search menu </a>
+      <a class="ui item"> <i class="sidebar icon"></i> Search / History </a>
       <h1 class="centered" id="newHeader">NASA Imagery Research</h1>
     </div>
 
     <!-- All main body content -->
-    <div class="ui bottom attached segment pusher pushable">
-
+    <div class="ui bottom attached segment">
       <!-- Sidebar for search criteria -->
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
       >
+        <!-- Link back to homepage -->
         <a
           class="item"
           href="https://gordon-magill.github.io/NASA_exploration/"
@@ -40,14 +40,16 @@
           <i class="home icon"></i>
           Home
         </a>
-        <a class="item">
-          <i class="block layout icon"></i>
+
+        <!-- Search icon -->
+        <div class="item">
+          <i class="search plus icon"></i>
           Search criteria
-        </a>
+        </div>
 
-        <p style="color: white">Required</p>
+        <p style="color: red; font-size: 20px">REQUIRED:</p>
 
-        <!-- Description -->
+        <!-- Description field for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -58,9 +60,9 @@
         </div>
 
         <br />
-        <p style="color: white">Optional</p>
+        <p style="color: white; font-size: 20px">OPTIONAL:</p>
 
-        <!-- Keywords -->
+        <!-- Keywords for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -71,7 +73,7 @@
         </div>
         <br />
 
-        <!-- Title -->
+        <!-- Title of image for search -->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -83,7 +85,7 @@
 
         <br />
 
-        <!-- Start Year -->
+        <!-- Start Year for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -95,7 +97,7 @@
 
         <br />
 
-        <!-- End Year -->
+        <!-- End Year for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -105,7 +107,27 @@
           />
         </div>
 
-        <input type="submit" id="customSearchButton" />
+        <!-- Submission button -->
+        <button
+          class="ui inverted primary button customButton"
+          id="customSearchButton"
+        >
+          Search using criteria above
+        </button>
+
+        <hr />
+
+        <p style="color: white; font-size: 20px">Search history:</p>
+        <button
+          class="ui inverted red button customButton"
+          id="clearHistoryButton"
+        >
+          Clear search history
+        </button>
+
+        <!-- Parent element for remaining content in search history, populated in JS -->
+        <div id="sideBarParent"></div>
+        <hr id="spacerBar" />
       </div>
 
       <!-- Main page content requested by user -->
