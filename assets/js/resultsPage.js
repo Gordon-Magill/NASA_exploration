@@ -6,9 +6,6 @@ searchButton.on("click", search2resultURL);
 var clearButton = $("#clearHistoryButton");
 clearButton.on("click", clearSearchHistory);
 
-// Flag for if the image to be presented is an un-renderable TIFF
-var TIFF_FLAG = false;
-
 // Enables sidebar hiding and revealing
 // Based on https://codepen.io/redshift7/pen/VaKmjq
 $(".ui.sidebar")
