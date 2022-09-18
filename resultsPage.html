@@ -32,6 +32,7 @@
       <div
         class="ui left demo vertical inverted sidebar labeled icon hidden menu"
       >
+        <!-- Link back to homepage -->
         <a
           class="item"
           href="https://gordon-magill.github.io/NASA_exploration/"
@@ -39,14 +40,16 @@
           <i class="home icon"></i>
           Home
         </a>
-        <a class="item">
-          <i class="block layout icon"></i>
+
+        <!-- Search icon -->
+        <div class="item">
+          <i class="search plus icon"></i>
           Search criteria
-        </a>
+        </div>
 
-        <p style="color: red; font-size: 20px;">REQUIRED:</p>
+        <p style="color: red; font-size: 20px">REQUIRED:</p>
 
-        <!-- Description -->
+        <!-- Description field for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -57,9 +60,9 @@
         </div>
 
         <br />
-        <p style="color: white; font-size: 20px;">OPTIONAL:</p>
+        <p style="color: white; font-size: 20px">OPTIONAL:</p>
 
-        <!-- Keywords -->
+        <!-- Keywords for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -70,7 +73,7 @@
         </div>
         <br />
 
-        <!-- Title -->
+        <!-- Title of image for search -->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -82,7 +85,7 @@
 
         <br />
 
-        <!-- Start Year -->
+        <!-- Start Year for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -94,7 +97,7 @@
 
         <br />
 
-        <!-- End Year -->
+        <!-- End Year for search-->
         <div class="ui small centered icon fluid input">
           <input
             class="prompt"
@@ -104,15 +107,25 @@
           />
         </div>
 
-        <button class="ui inverted primary button" id="customSearchButton">
+        <!-- Submission button -->
+        <button
+          class="ui inverted primary button customButton"
+          id="customSearchButton"
+        >
           Search using criteria above
         </button>
-        <!-- <label for="customSearchButton">Search</label> -->
+
         <hr />
-        <p style="color: white">Search history:</p>
-        <button class="ui inverted red button" id="clearHistoryButton">
+
+        <p style="color: white; font-size: 20px">Search history:</p>
+        <button
+          class="ui inverted red button customButton"
+          id="clearHistoryButton"
+        >
           Clear search history
         </button>
+
+        <!-- Parent element for remaining content in search history, populated in JS -->
         <div id="sideBarParent"></div>
       </div>
 
@@ -125,28 +138,21 @@
             <!-- Main image container -->
             <div class="ui nine wide column" id="imageContainer">
               <!-- Placeholder image in src -->
-              <img
-                class="ui huge centered image"
-                src="#"
-                id="nasaPhotoEl"
-              />
+              <img class="ui huge centered image" src="#" id="nasaPhotoEl" />
             </div>
 
-            <!-- Image information containers -->
+            <!-- Image information container -->
             <div class="ui six wide column">
               <!-- Metadata of the image -->
               <div class="ui row infoContainer">
-                <h2 id="nasaTitleEl">Heating Martian Sand Grains</h2>
-                <p id="nasaDescriptionEl">
-                  This plot of data from NASA Mars rover Curiosity shows the
-                  variety of gases that were released from sand grains upon
-                  heating in the Sample Analysis at Mars instrument, or SAM.
-                </p>
+                <h2 id="nasaTitleEl">Placeholder Title</h2>
+                <p id="nasaDescriptionEl">Placeholder description</p>
                 <p>
-                  Date: <span id="nasaDateCreatedEl">2012-12-03T17:00:06Z</span>
+                  Date: <span id="nasaDateCreatedEl">Placeholder date</span>
                 </p>
               </div>
 
+              <!-- Section for wikipedia content -->
               <div class="ui row infoContainer">
                 <div class="ui mini icon input header__search-bar">
                   <input
@@ -187,8 +193,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Pusher class to help sidebar render correctly -->
     </div>
 
     <!-- jQuery -->

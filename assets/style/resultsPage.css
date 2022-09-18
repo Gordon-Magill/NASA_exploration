@@ -1,3 +1,4 @@
+/* Styles the main body of the page */
 .ui.segment {
   background-image: linear-gradient(
     to bottom,
@@ -6,6 +7,7 @@
   );
 }
 
+/* Styles the top bar of the page, effectively the header / nav area */
 .ui.top.attached {
   background-image: linear-gradient(
     to right,
@@ -14,18 +16,17 @@
   );
 }
 
+/* Ensures proper coloring of menu button */
 .ui.top.attached > a {
   background-color: white;
 }
+
+/* Ensures proper coloring of menu button */
 .ui.top.attached > a:hover {
   background-color: white;
 }
 
-#topMenuBar {
-  display: flex;
-  /* align-content: center; */
-}
-
+/* Styles title/header element at top of page */
 #newHeader {
   align-self: center;
   margin: 0 0 0 10px;
@@ -33,31 +34,12 @@
   text-shadow: 0px 0px 3px black;
 }
 
-/* .mainBody {
-    background-color: rgb(111, 111, 111);
-} */
-
-body {
-  background-color: rgb(111, 111, 111);
-  font-size: 30px;
-}
-
+/* Centers bottom footer text */
 footer {
   text-align: center;
 }
 
-.customHeader {
-  background-color: black;
-}
-
-/* #musicContainer {
-  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-  background-color: rgb(144, 143, 143);
-  border-radius: 15px;
-  margin-top: 10px;
-  width: 100%;
-} */
-
+/* Styles rounded bubbles that house the text content on the page */
 .infoContainer {
   /* border: 2px solid black; */
   background-image: linear-gradient(
@@ -69,13 +51,12 @@ footer {
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 15px;
-  /* margin-right: 10px; */
   margin: 10px;
   font-size: 14px;
 }
 
+/* Styles the container for the main image on the page */
 #imageContainer {
-  /* border: 2px solid black; */
   box-shadow: 0px 0px 10px black, 0px 0px 10px black;
   background-image: linear-gradient(
     to bottom,
@@ -84,17 +65,18 @@ footer {
   );
   border-radius: 15px;
   padding: 10px;
-  /* margin-left: 10px; */
   margin: 25px;
-  /* margin-top: 25px; */
 }
 
-/* .ui.grid>.stackable.stackable.row>.column, .ui.stackable.grid>.column.grid>.column, .ui.stackable.grid>.column.row>.column, .ui.stackable.grid>.column:not(.row), .ui.stackable.grid>.row>.column, .ui.stackable.grid>.row>.wide.column, .ui.stackable.grid>.wide.column {
-  box-shadow: 0px 0px 10px black, 0px 0px 10px black;
-} */
-
+/* Adds proper spacing */
 #searchBar {
   margin-bottom: 15px;
+}
+
+/* Gives better spacing on sidebar */
+#customSearchButton,
+#clearHistoryButton {
+  margin: 10px;
 }
 
 .results__item__intro {
@@ -109,8 +91,4 @@ footer {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-#searchBarParent {
-  color: white;
 }
