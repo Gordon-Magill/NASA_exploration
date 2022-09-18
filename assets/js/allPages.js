@@ -62,7 +62,7 @@ function renderSearchHistory() {
     var nProps = Object.keys(queryParams).length;
 
     // Creating elements of the card
-    var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html${searchHistory[k]}`;
+    var searchHistoryLink = `./resultsPage.html${searchHistory[k]}`;
     var newHistoryCard = $(
       `<a class="ui raised card" href="${searchHistoryLink}">`
     );
@@ -112,7 +112,7 @@ function search2resultURL() {
     var endYearField = $("#searchBarEndYear");
   
     // Template URL with required query
-    var searchResultURL = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html?q=${descriptionField.val()}&media_type=image`; //MAKE SURE THIS IS THE DEPLOYED ONE
+    var searchResultURL = `./resultsPage.html?q=${descriptionField.val()}&media_type=image`; //MAKE SURE THIS IS THE DEPLOYED ONE
     // var searchResultURL = `http://127.0.0.1:5500/group_projects/nasa_exploration/resultsPage.html?q=${descriptionField.val()}&media_type=image`;
   
     // Conditional statements that add in new query terms if they were added
