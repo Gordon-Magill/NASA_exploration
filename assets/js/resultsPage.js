@@ -206,7 +206,7 @@ function renderSearchHistory() {
 
     // Add description to history card if optional query parameters were used
     if (nProps > 1) {
-      console.log("Rendering greater description");
+      // console.log("Rendering greater description");
       for (j = 1; j < nProps; j++) {
         if (Object.keys(queryParams)[j] !== "media_type") {
           var paramPTag = $("<p>");
@@ -217,7 +217,7 @@ function renderSearchHistory() {
           );
           cardDescription.append(paramPTag);
         }
-        console.log(j);
+        // console.log(j);
       }
       // cardDescriptionText.text(descriptionText)
       cardDescription.append(cardDescriptionText);
