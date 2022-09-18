@@ -1,13 +1,13 @@
-// $(".ui.labeled.icon.sidebar").sidebar("toggle").transition("slide left");
-// var apiKey = QMAeSLw9LphOgRCAK702ASasb6X8HaxCufGsvHaw
+// Search button in the left sidebar
 var searchButton = $('#customSearchButton');
 searchButton.on("click", search2resultURL);
 
+// Clear search history button in left sidebar
 var clearButton = $('#clearHistoryButton');
 clearButton.on('click',clearSearchHistory)
 
 // Enables sidebar hiding and revealing
-// https://codepen.io/redshift7/pen/VaKmjq
+// Based on https://codepen.io/redshift7/pen/VaKmjq
 $(".ui.sidebar")
   .sidebar({
     context: $(".bottom.segment"),
@@ -59,115 +59,64 @@ function search2resultURL() {
 
 // Uses the URL of the results page to query the NASA API and retrieve content
 function URL2result() {
+  // Grab the query string and generate the API link
   queryString = document.location.search;
   apiURL = 'https://images-api.nasa.gov/search'+queryString
   
+  // Fetch NASA content
   fetch(apiURL)
   .then(function (response) {
-    console.log(response)
+    // console.log(response)
 
     // In case of bad response, send user to bad search page
     if (response.status >= 400) {
       document.location.replace('https://gordon-magill.github.io/NASA_exploration/ErrorResultPage.html')
     }
+
+    // Parse the response as JSON
     return response.json();
   })
   .then(function (data) {
-    // console.log(data.collection.items[0].data[0]);
+    // Grab elements out of the JSON return structure
     var primaryResult = data.collection.items[0].data[0];
     var imgCreatedDate = data.collection.items[0].data[0].date_created;
-    // console.log(imgCreatedDate);
     var imgDescription = primaryResult.description;
-    // console.log(imgDescription);
     var imgTitle = primaryResult.title;
-    // console.log(imgTitle);
     var nasa_id = primaryResult.nasa_id;
-    // console.log(nasa_id);
 
-    //   Setting the page elements to the retrieved data
+    // Setting the page elements to the retrieved data
     nasaTitleEl.text(imgTitle);
     nasaDescriptionEl.html(imgDescription);
     nasaDateCreatedEl.text(imgCreatedDate);
-    //   nasa
+
+    // Since the API doesn't directly return the image link, retrieve it separately
     getImage(nasa_id);
   });
 
 }
 
-// function executeSearch() {
-//   // Input elements in the search bar
-//   var descriptionField = $("#searchBarDescription");
-//   var keywordsField = $("#searchBarKeywords");
-//   var titleField = $("#searchBarTitle");
-//   var startYearField = $("#searchBarStartYear");
-//   var endYearField = $("#searchBarEndYear");
-
-//   // Template URL with required query
-//   var requestURL = `https://images-api.nasa.gov/search?q=${descriptionField.val()}&media_type=image`;
-
-//   // Conditional statements that add in new query terms if they were added
-//   if (keywordsField.val()) {
-//     requestURL += `&keywords=${keywordsField.val()}`
-//   }
-
-//   if (titleField.val()) {
-//     requestURL += `&title=${titleField.val()}`
-//   }
-
-//   if (startYearField.val()) {
-//     requestURL += `&year_start=${startYearField.val()}`
-//   }
-
-//   if (endYearField.val()) {
-//     requestURL += `&year_end=${endYearField.val()}`
-//   }
-
-//   // Fetching content based on the final request URL
-//   fetch(requestURL)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data.collection.items[0].data[0]);
-//       var primaryResult = data.collection.items[0].data[0];
-//       var imgCreatedDate = data.collection.items[0].data[0].date_created;
-//       console.log(imgCreatedDate);
-//       var imgDescription = primaryResult.description;
-//       console.log(imgDescription);
-//       var imgTitle = primaryResult.title;
-//       console.log(imgTitle);
-//       var nasa_id = primaryResult.nasa_id;
-//       console.log(nasa_id);
-
-//       //   Setting the page elements to the retrieved data
-//       nasaTitleEl.text(imgTitle);
-//       nasaDescriptionEl.text(imgDescription);
-//       nasaDateCreatedEl.text(imgCreatedDate);
-//       //   nasa
-//       getImage(nasa_id);
-//     });
-// }
-
+// Retrieves and renders a select image from NASA's image database
 function getImage(nasa_id) {
+  // Fetch the image based on the nasa_id gleaned from the last API call
   fetch(`https://images-api.nasa.gov/asset/${nasa_id}`)
     .then(function (response) {
+      console.log(response)
 
       //Redirect upon bad response
       if (response.status >= 400) {
         document.location.replace('https://gordon-magill.github.io/NASA_exploration/ErrorResultPage.html')
       }
 
+      // Parse the response as JSON
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      var imgLink = data.collection.items[0].href; //Index 1 gets the "medium" image
 
-      // TODO: Add fix for case where returned file is actually more metadata
+      // Indexing of the image link gives different sizes -> 0 is always available, but is the largest size (original)
+      var imgLink = data.collection.items[0].href;
 
       console.log('Image link: '+imgLink)
-      // console.log('Parsed image link:')
-      // console.log(JSON.parse(imgLink))
       nasaPhotoEl.attr("src", imgLink);
 
       // Since request was successful, add the result to the search history
@@ -175,6 +124,7 @@ function getImage(nasa_id) {
     });
 }
 
+// Uses localStorage to save the search history of the NASA API
 function addToSearchHistory() {
   // Grab existing search history (or empty array as backup)
   var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
@@ -191,14 +141,17 @@ function addToSearchHistory() {
     }
   }
 
-  searchHistory.push(document.location.search)
+  // Add the new history element 
+  searchHistory.push(currentQuery)
 
+  // Save the new searchHistory value to localStorage
   localStorage.setItem('searchHistory',JSON.stringify(searchHistory))
 
+  // Now that there's new searchHistory content, refresh the content on the page
   refreshSearchHistory()
 }
 
-// Takes the search history and uses it to render new elements on the search history
+// Takes the search history in localStorage and uses it to render new elements on the search history
 function renderSearchHistory() {
   var sideBarParent = $('#sideBarParent')
   var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
@@ -224,9 +177,7 @@ function renderSearchHistory() {
 
     // Fetch query parameters from the query string
     var queryParams = getQueryObject(searchHistory[k])
-    // console.log(Object.keys(queryParams)[0])
     var nProps = Object.keys(queryParams).length;
-    console.log(`nProps: ${nProps}`)
 
     // Creating elements of the card
     var searchHistoryLink = `https://gordon-magill.github.io/NASA_exploration/resultsPage.html${searchHistory[k]}`
@@ -239,10 +190,9 @@ function renderSearchHistory() {
     
 
     // Assembling card components into the final card
-    
     cardContent.append(cardTitle)
 
-    // Add description if optional query parameters were used
+    // Add description to history card if optional query parameters were used
     if (nProps>1) {
       console.log('Rendering greater description')
       for (j=1;j<nProps;j++) {
@@ -258,24 +208,23 @@ function renderSearchHistory() {
       cardDescription.append(cardDescriptionText)
       cardContent.append(cardDescription)
     }
+
+    // Add the variable content to the card
     newHistoryCard.append(cardContent)
 
     // Actually appending the new card
     sideBarParent.append(newHistoryCard)
-
-
-
   }
-
-  return;
 }
 
+// Refreshes the content of the search history to make sure it's up to date
 function refreshSearchHistory() {
   var sideBarParent = $('#sideBarParent')
   sideBarParent.empty();
   renderSearchHistory()
 }
 
+// Completely wipe the search history, both the visual elements and localStorage
 function clearSearchHistory() {
   localStorage.setItem('searchHistory',JSON.stringify([]))
   var sideBarParent = $('#sideBarParent')
@@ -284,6 +233,6 @@ function clearSearchHistory() {
 
 // Upon page load, grab the search result...
 URL2result();
-//...and if page wasn't redirected, then show the search history in on the left
+//...and if page wasn't redirected, then show the search history on the left
 renderSearchHistory();
 
