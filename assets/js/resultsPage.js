@@ -23,6 +23,7 @@ var nasaPhotoEl = $("#nasaPhotoEl");
 
 // Function that takes search bar fields and redirects the user to the
 // results page for the results to be displayed from the URL query parameters
+
 function search2resultURL() {
   // Input elements in the search bar
   var descriptionField = $("#searchBarDescription");
