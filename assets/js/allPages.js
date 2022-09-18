@@ -137,4 +137,4 @@ function search2resultURL() {
     document.location.replace(searchResultURL);
   }
 
-  refreshSearchHistory()
+refreshSearchHistory()
