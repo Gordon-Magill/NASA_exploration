@@ -150,15 +150,16 @@
             <script src= "assets/images/nasa_logo_icon_170926.png"></script>
             <center>
               <div class="ui center container">
-                <img class="ui image huge" src="assets/images/nasa_logo_icon_170926.png"/><br>   
-                        <button class="ui button" src="assets/images/nasa_logo_icon_170926.png">
-                            Welcome to our astronomical page! Click on the Search/History button to begin!
-                        </button>
-                    </div>
+                <img class="ui image huge" src="assets/images/nasa_logo_icon_170926.png"/>
+                <br>   
+                <button class="ui button" src="assets/images/nasa_logo_icon_170926.png" id="jiggleButton">
+                    Welcome to our astronomical page! Click on the Search/History button to begin!
+                </button>
+              </div>
                 <script>
-                    $('button').click(function() {
-                        $('.image').transition('jiggle');
-                    })
+                  $('#jiggleButton').on('click',function() {
+                      $('.image').transition('jiggle');
+                  })
                 </script>
             </center>
           </div>
