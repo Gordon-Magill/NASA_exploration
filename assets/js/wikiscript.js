@@ -1,4 +1,4 @@
-
+//Pulled guidence from this link https://www.youtube.com/watch?v=yqwHxAH1xrw&t=272s to develop and intigrate the api into our project
 // below are the queryselectors
 const submitButton = document.querySelector('#submit');
 const input = document.querySelector('#input');
@@ -18,30 +18,36 @@ const params = {
     gsrlimit: 1,
 };
 
+// Disables elements when called
 const disUi = () => {
     input.disabled = true;
     submitButton.disabled = true;
 };
 
+// Enables elements when called
 const enabUi = () => {
     input.disabled = false;
     submitButton.disabled = false;
 };
 
+// Empty the wiki container of any previously presented results
 const clearPreviousResults = () => {
     resultsContainer.innerHTML = '';
     errorSpan.innerHTML = '';
 };
 
+// Determine state of input
 const isInputEmpty = input => {
     if (!input || input === '') return true;
     return false;
 };
 
+// Alert user to a bad search
 const showError = error => {
     errorSpan.innerHTML = `🚨 ${error} 🚨`;
 };
 
+// Actually render new wiki content after search
 const showResults = results => {
     results.forEach(result => {
         resultsContainer.innerHTML += `
@@ -55,6 +61,7 @@ const showResults = results => {
     });
 };
 
+// Parsing data
 const gatherData = pages => {
     const results = Object.values(pages).map(page => ({
         pageId: page.pageid,
@@ -65,6 +72,7 @@ const gatherData = pages => {
     showResults(results);
 };
 
+// Grab new data
 const getData = async () => {
     const userInput = input.value;
     if (isInputEmpty(userInput)) return;
@@ -85,20 +93,18 @@ const getData = async () => {
     }
 };
 
+// Event handler to allow you to just hit enter to search
 const handleKeyEvent = e => {
     if (e.key === 'Enter') {
         getData();
     }
 };
 
+// Set up the event handlers
 const registerEventHandlers = () => {
     input.addEventListener('keydown', handleKeyEvent);
     submitButton.addEventListener('click', getData);
 };
 
+// Make sure event handlers are loaded on page load
 registerEventHandlers();
-
-
-
-//pulled guidence from this link https://www.youtube.com/watch?v=yqwHxAH1xrw&t=272s to develop and intigrate the api into our project
- 

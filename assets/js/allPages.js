@@ -104,37 +104,38 @@ function renderSearchHistory() {
   }
 }
 
+// Takes search fields and constructs the URL of the result page that also encodes the NASA API query string
 function search2resultURL() {
-    // Input elements in the search bar
-    var descriptionField = $("#searchBarDescription");
-    var keywordsField = $("#searchBarKeywords");
-    var titleField = $("#searchBarTitle");
-    var startYearField = $("#searchBarStartYear");
-    var endYearField = $("#searchBarEndYear");
-  
-    // Template URL with required query
-    var searchResultURL = `./resultsPage.html?q=${descriptionField.val()}&media_type=image`; //MAKE SURE THIS IS THE DEPLOYED ONE
-    // var searchResultURL = `http://127.0.0.1:5500/group_projects/nasa_exploration/resultsPage.html?q=${descriptionField.val()}&media_type=image`;
-  
-    // Conditional statements that add in new query terms if they were added
-    if (keywordsField.val()) {
-      searchResultURL += `&keywords=${keywordsField.val()}`;
-    }
-  
-    if (titleField.val()) {
-      searchResultURL += `&title=${titleField.val()}`;
-    }
-  
-    if (startYearField.val()) {
-      searchResultURL += `&year_start=${startYearField.val()}`;
-    }
-  
-    if (endYearField.val()) {
-      searchResultURL += `&year_end=${endYearField.val()}`;
-    }
-  
-    // Forward the user on to the constructed result page URL
-    document.location.replace(searchResultURL);
+  // Input elements in the search bar
+  var descriptionField = $("#searchBarDescription");
+  var keywordsField = $("#searchBarKeywords");
+  var titleField = $("#searchBarTitle");
+  var startYearField = $("#searchBarStartYear");
+  var endYearField = $("#searchBarEndYear");
+
+  // Template URL with required query
+  var searchResultURL = `./resultsPage.html?q=${descriptionField.val()}&media_type=image`; //MAKE SURE THIS IS THE DEPLOYED ONE
+
+  // Conditional statements that add in new query terms if they were added
+  if (keywordsField.val()) {
+    searchResultURL += `&keywords=${keywordsField.val()}`;
   }
 
+  if (titleField.val()) {
+    searchResultURL += `&title=${titleField.val()}`;
+  }
+
+  if (startYearField.val()) {
+    searchResultURL += `&year_start=${startYearField.val()}`;
+  }
+
+  if (endYearField.val()) {
+    searchResultURL += `&year_end=${endYearField.val()}`;
+  }
+
+  // Forward the user on to the constructed result page URL
+  document.location.replace(searchResultURL);
+}
+
+// Always load the search history on all pages
 refreshSearchHistory()
