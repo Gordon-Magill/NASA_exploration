@@ -14,11 +14,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
     />
-    <!-- Jiggle with Semantic ui-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/style/index.css"/>
@@ -154,18 +149,14 @@
            <!-- <img class="ui fluid image" src="assets/images/nasa_logo_icon_170926.png"  > -->
             <script src= "assets/images/nasa_logo_icon_170926.png"></script>
             <center>
-              <div class="ui container">
-                <img class="ui image huge" src="assets/images/nasa_logo_icon_170926.png"/><br>   
-                        <button class="ui button" src="assets/images/nasa_logo_icon_170926.png">
-                            Welcome to our astronomical page! CLick on the Search/History button to begin!
-                        </button>
-                    </div>
-                <script>
-                    $('button').click(function() {
-                        $('.image').transition('jiggle');
-                    })
-                </script>
-              </center>
+              <div class="ui center container">
+                <img class="ui image huge" src="assets/images/nasa_logo_icon_170926.png"/>
+                <br>   
+                <button class="ui button" src="assets/images/nasa_logo_icon_170926.png" id="jiggleButton">
+                    Welcome to our astronomical page! Click on the Search/History button to begin!
+                </button>
+              </div>
+            </center>
           </div>
           <footer class="footer">
             <br />
@@ -185,7 +176,6 @@
     <!-- Semantic UI -->
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-  
     <!-- Custom JS -->
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/allPages.js"></script>
