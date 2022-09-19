@@ -1,22 +1,30 @@
-#link { margin-top: 300px;
-margin-left: 79px;
-padding-left: 49px;
-}
+/* #link {
+    margin-top: 300px;
+    margin-left: 79px;
+    padding-left: 49px;
+} */
 
 body{
     background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-29-a-xlarge_web.jpg);
     opacity: 90%;
 }
 
-#cardContainer {
-    position: absolute;
-    top: -280px;
-    left: -25px;
+/* .pusher {
+    margin-bottom: 100px;
+} */
 
+#cardContainer {
+    position: relative;
+    top: 50px;
+}
+
+#cardRow {
+    padding-bottom: 75px;
 }
 
 #gordonCard, #santiagoCard, #lamarCard, #prateekCard {
-    margin: 8px;
+
+    margin: 10px;
 }
 
 #spacerBar {
