@@ -7,3 +7,14 @@ body{
     background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-29-a-xlarge_web.jpg);
     opacity: 90%;
 }
+
+#cardContainer {
+    position: absolute;
+    top: -280px;
+    left: -25px;
+
+}
+
+#gordonCard, #santiagoCard, #lamarCard, #prateekCard {
+    margin: 10px;
+}
