@@ -10,7 +10,11 @@ body{
 
 #cardContainer {
     position: absolute;
-    top: -300px;
+    top: -280px;
     left: -25px;
 
+}
+
+#gordonCard, #santiagoCard, #lamarCard, #prateekCard {
+    margin: 10px;
 }
