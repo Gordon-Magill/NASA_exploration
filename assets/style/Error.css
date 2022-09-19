@@ -1,3 +1,4 @@
+/* Styles the main content of the page */
 .pagewrap {
     display: flex;
     flex-direction: column;
@@ -9,6 +10,8 @@
     text-align: center;
   
 }
+
+/* Additionally styles the main content of the page */
 .badsearch {
   
     font-family: 'Ms Madi', cursive;
@@ -16,7 +19,9 @@
     font-size: 3rem;
     text-shadow: -4px 2px;
     text-shadow: rgb(252, 252, 252);
-    }
+}
+
+/* Stylized background */
 body{
     background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-29-a-xlarge_web.jpg);
     opacity: 95%;

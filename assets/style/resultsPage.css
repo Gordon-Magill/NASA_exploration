@@ -79,10 +79,12 @@ footer {
   margin: 10px;
 }
 
+/* Wiki styling */
 .results__item__intro {
   color: black;
 }
 
+/* Wiki styling */
 .search-bar__button {
   border: none;
   color: white;
@@ -93,6 +95,7 @@ footer {
   font-size: 16px;
 }
 
+/* Spacer bar at bottom of the search menu to force rendering of all search history cards */
 #spacerBar {
   margin-bottom: 100px;
 }
