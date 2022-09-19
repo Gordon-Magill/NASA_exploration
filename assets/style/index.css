@@ -1,7 +1,9 @@
+/* Backup body styling */
 body {
   background-color: rgb(111, 111, 111);
 }
 
+/* Stylized footer */
 .footer {
   background-color: black;
   color : white;
@@ -16,6 +18,7 @@ body {
   font-size: 3rem;
 }
 
+/* Image positioning */
 .fluid.image {
   margin-top: 35%;
 }

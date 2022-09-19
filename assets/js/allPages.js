@@ -115,7 +115,6 @@ function search2resultURL() {
 
   // Template URL with required query
   var searchResultURL = `./resultsPage.html?q=${descriptionField.val()}&media_type=image`; //MAKE SURE THIS IS THE DEPLOYED ONE
-  // var searchResultURL = `http://127.0.0.1:5500/group_projects/nasa_exploration/resultsPage.html?q=${descriptionField.val()}&media_type=image`;
 
   // Conditional statements that add in new query terms if they were added
   if (keywordsField.val()) {
