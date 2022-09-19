@@ -1,10 +1,10 @@
 
-
+// below are the queryselectors
 const submitButton = document.querySelector('#submit');
 const input = document.querySelector('#input');
 const errorSpan = document.querySelector('#error');
 const resultsContainer = document.querySelector('#results');
-
+// where it pulls from and what it pulls. takes 5000 characters from the topic searched 
 const endpoint = 'https://en.wikipedia.org/w/api.php?';
 const params = {
     origin: '*',
@@ -18,12 +18,12 @@ const params = {
     gsrlimit: 1,
 };
 
-const disableUi = () => {
+const disUi = () => {
     input.disabled = true;
     submitButton.disabled = true;
 };
 
-const enableUi = () => {
+const enabUi = () => {
     input.disabled = false;
     submitButton.disabled = false;
 };
@@ -71,7 +71,7 @@ const getData = async () => {
 
     params.gsrsearch = userInput;
     clearPreviousResults();
-    disableUi();
+    disUi();
 
     try {
         const { data } = await axios.get(endpoint, { params });
@@ -81,7 +81,7 @@ const getData = async () => {
     } catch (error) {
         showError(error);
     } finally {
-        enableUi();
+        enabUi();
     }
 };
 
@@ -100,5 +100,5 @@ registerEventHandlers();
 
 
 
-
+//pulled guidence from this link https://www.youtube.com/watch?v=yqwHxAH1xrw&t=272s to develop and intigrate the api into our project
  
