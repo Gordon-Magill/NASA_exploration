@@ -7,7 +7,7 @@ function URL2result() {
   // Fetch NASA content
   fetch(apiURL)
     .then(function (response) {
-      // console.log(response)
+      console.log(response)
 
       // In case of bad response, send user to bad search page
       if (response.status >= 400) {
@@ -21,6 +21,16 @@ function URL2result() {
     })
     .then(function (data) {
       // Grab elements out of the JSON return structure
+      // ...but first, see if the response is legible, and if not, throw the user to the error page
+      try {
+        var primaryResult = data.collection.items[0].data[0];
+      }
+      catch {
+        document.location.replace(
+          "./ErrorResultPage.html"
+        );
+        return;
+      }
       var primaryResult = data.collection.items[0].data[0];
       var imgCreatedDate = data.collection.items[0].data[0].date_created;
       var imgDescription = primaryResult.description;
