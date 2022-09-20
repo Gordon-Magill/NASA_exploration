@@ -70,16 +70,12 @@ https://docs.google.com/presentation/d/1wEaU0H08qnuyKl7v5faaYsb-Lv2IPN5LAmyu9sul
 
 ## Screenshots in Responsive Dimensions
 
-![Screenshot (11)](https://user-images.githubusercontent.com/107451001/190936384-7c010049-7c40-4296-8040-965af96bbbf3.png)
+![image](./assets/images/deployed/home.png)
 
-![image](https://user-images.githubusercontent.com/107451001/190931464-e062ada2-fa57-4f85-b05a-02e95160f32b.png)
+![image](./assets/images/deployed/homeSearch.png)
 
-![image](https://user-images.githubusercontent.com/107451001/190931371-8a5fa4c6-cba3-4b80-8058-e497214263e0.png)
+![image](./assets/images/deployed/resultPage.png)
 
-## Contributing
+![image](./assets/images/deployed/meetTheTeam.png)
 
-Contributions are always welcome!
-
-See `CONTRIBUTING.md` for ways to get started. Please adhere to this project's code of `CODE_OF_CONDUCT.md`
-
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+![image](./assets/images/deployed/errorPage.png)

@@ -116,5 +116,5 @@ function addToSearchHistory() {
 
 // Upon page load, grab the search result...
 URL2result();
-//...and if page wasn't redirected, then show the search history on the left
+//...and if page wasn't redirected by now, then show the search history on the left
 renderSearchHistory();

@@ -1,4 +1,4 @@
-
+//Pulled guidence from this link https://www.youtube.com/watch?v=yqwHxAH1xrw&t=272s to develop and intigrate the api into our project
 // below are the queryselectors
 const submitButton = document.querySelector('#submit');
 const input = document.querySelector('#input');
@@ -38,6 +38,7 @@ const errorInput = error => {
 };
 
 const showResults = results => { // this part templates/formats the data to the ui. 
+
     results.forEach(result => {
         resultsContainer.innerHTML += `
         <div class="results__item">
@@ -50,7 +51,9 @@ const showResults = results => { // this part templates/formats the data to the 
     });
 };
 
+
 const gatherData = pages => { // this function gathers the specified data. page id, title, intro
+
     const results = Object.values(pages).map(page => ({
         pageId: page.pageid,
         title: page.title,
@@ -59,8 +62,10 @@ const gatherData = pages => { // this function gathers the specified data. page 
 
     showResults(results);
 };
+
 // this function fetches the users input 
 const getData = async () => { // we declared getData with the async function that works with 'await' that works with axios's 'promise' to fetch data
+
     const userInput = input.value;
     if (emptyInput(userInput)) return;
 // parameters of users input. grsearch searches for page titles or matching values.
@@ -79,21 +84,21 @@ const getData = async () => { // we declared getData with the async function tha
         changUiState();
     }
 };
-// this makes it so that when you hit enter the search process begins 
+
+// Event handler to allow you to just hit enter to search
+
 const handleKeyEvent = e => {
     if (e.key === 'Enter') {
         getData();
     }
 };
+
 // registering the event listeners so that when you click the search process begins
+
 const registerEventHandlers = () => {
     input.addEventListener('keydown', handleKeyEvent);
     submitButton.addEventListener('click', getData);
 };
 
+// Make sure event handlers are loaded on page load
 registerEventHandlers();
-
-
-
-//pulled guidence from this link https://www.youtube.com/watch?v=yqwHxAH1xrw&t=272s to develop and intigrate the api into our project
- 

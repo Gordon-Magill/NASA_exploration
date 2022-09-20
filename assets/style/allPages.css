@@ -50,6 +50,7 @@ footer {
   margin: 10px;
 }
 
+/* Spacer bar at bottom of the search menu to force rendering of all search history cards */
 #spacerBar {
   margin-bottom: 100px;
 }
